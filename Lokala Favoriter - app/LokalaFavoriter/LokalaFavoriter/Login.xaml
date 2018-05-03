@@ -5,9 +5,9 @@
              BackgroundColor="WhiteSmoke">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="StartAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="username" Placeholder="Användarnamn" />
+            <Entry x:Name="password" Placeholder="Lösernord" IsPassword="True" />
+            <Button x:Name="submit" Text="Logga in" Clicked="btn_login"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -12,7 +12,7 @@ namespace SqlServerConnections
             builder.DataSource = "lokalafavoriter.database.windows.net";
             builder.InitialCatalog = "lokalafavoriter";
             builder.UserID = "sundsvall2018";
-            builder.Password = "Sommar2018!";
+            builder.Password = "sommar2018!";
             SqlConnection connection = new SqlConnection(builder.ConnectionString);
             return connection;
         }
