@@ -4,11 +4,11 @@
              x:Class="LokalaFavoriter.Login"
              BackgroundColor="LightSteelBlue">
     <ContentPage.Content>
-
+   
         
 
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
-            <Image Source="logotest.png" Margin="0,80,0,0" WidthRequest="300"></Image>
+            <Image Source="logotest2.png" Margin="0,80,0,0"></Image>
             
             <Entry x:Name="username"
                    PlaceholderColor="Black"
