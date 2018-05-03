@@ -2,12 +2,48 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LokalaFavoriter.Login"
-             BackgroundColor="WhiteSmoke">
+             BackgroundColor="LightSteelBlue">
     <ContentPage.Content>
-        <StackLayout>
-            <Entry x:Name="username" Placeholder="Användarnamn" />
-            <Entry x:Name="password" Placeholder="Lösernord" IsPassword="True" />
-            <Button x:Name="submit" Text="Logga in" Clicked="btn_login"/>
+
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Image Source="logotest.png" Margin="0,80,0,0"></Image>
+            
+            <Entry x:Name="username"
+                   PlaceholderColor="black"
+                   Placeholder="Användarnamn"
+                   HorizontalOptions="Center" 
+                   Margin="0,80,0,0">
+            
+                <Entry.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">150</On>
+                        <On Platform="Android,Windows">150</On>
+                    </OnPlatform>
+                </Entry.WidthRequest>
+
+            </Entry>
+            <Entry x:Name="password"
+                   PlaceholderColor="black" 
+                   Placeholder="Lösernord" 
+                   IsPassword="True" 
+                   HorizontalOptions="Center">
+                
+                <Entry.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="iOS">150</On>
+                        <On Platform="Android,Windows">150</On>
+                    </OnPlatform>
+                </Entry.WidthRequest>
+
+            </Entry>
+
+            <Button x:Name="submit" 
+                    Text="Logga in" 
+                    Clicked="btn_login" 
+                    HorizontalOptions="Center" 
+                    BackgroundColor="GhostWhite" 
+                    TextColor="Black"/>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
