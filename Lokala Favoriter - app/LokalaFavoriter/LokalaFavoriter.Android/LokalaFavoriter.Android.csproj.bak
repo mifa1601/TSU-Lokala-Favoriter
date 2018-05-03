@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>LokalaFavoriter.Droid</RootNamespace>
     <AssemblyName>LokalaFavoriter.Android</AssemblyName>
-    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -79,11 +79,14 @@
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\LokalaFavoriter\LokalaFavoriter.csproj">
       <Project>{7454B802-6AC3-4C98-8BBC-ABE385A0B4EE}</Project>
       <Name>LokalaFavoriter</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+
+
+ <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
