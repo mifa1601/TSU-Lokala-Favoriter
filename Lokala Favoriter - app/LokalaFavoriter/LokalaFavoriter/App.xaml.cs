@@ -13,7 +13,7 @@ namespace LokalaFavoriter
 		{
 			InitializeComponent();
 
-			MainPage = new LokalaFavoriter.MainPage();
+			MainPage = new LokalaFavoriter.Login();
 		}
 
 		protected override void OnStart ()
