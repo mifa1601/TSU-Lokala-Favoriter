@@ -9,7 +9,7 @@
             <Image Source="logotest.png" Margin="0,80,0,0"></Image>
             
             <Entry x:Name="username"
-                   PlaceholderColor="black"
+                   PlaceholderColor="Black"
                    Placeholder="Användarnamn"
                    HorizontalOptions="Center" 
                    Margin="0,80,0,0">
@@ -23,7 +23,7 @@
 
             </Entry>
             <Entry x:Name="password"
-                   PlaceholderColor="black" 
+                   PlaceholderColor="Black" 
                    Placeholder="Lösernord" 
                    IsPassword="True" 
                    HorizontalOptions="Center">
