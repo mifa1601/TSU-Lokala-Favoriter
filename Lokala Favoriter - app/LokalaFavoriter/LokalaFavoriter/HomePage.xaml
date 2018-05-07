@@ -24,7 +24,8 @@
                     HorizontalOptions="Center"
                     WidthRequest="70"
                     HeightRequest="70"/>
-            <Button Text="P"  
+            <Button Text="P"
+                    Clicked="btn_products"
                     BackgroundColor="GhostWhite" 
                     TextColor="Black"
                     Grid.Row="1"
