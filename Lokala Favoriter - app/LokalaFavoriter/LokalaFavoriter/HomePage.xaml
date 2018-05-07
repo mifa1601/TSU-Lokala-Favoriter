@@ -7,16 +7,17 @@
 
             <Grid VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
                 </Grid.RowDefinitions>
-            <BoxView Color="Gray" Grid.Row="2" Grid.ColumnSpan="5"/>
+            <BoxView Color="LightSeaGreen" Grid.Row="2" Grid.ColumnSpan="5"/>
+
             <Button Text="K" 
                     BackgroundColor="GhostWhite" 
                     TextColor="Black"
@@ -24,8 +25,9 @@
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     WidthRequest="70"
-                    HeightRequest="70"/>
-            <Button Text="P"
+                    HeightRequest="70"
+                    Margin="1,1,1,1"/>
+                <Button Text="P"
                     Clicked="btn_products"
                     BackgroundColor="GhostWhite" 
                     TextColor="Black"
@@ -33,7 +35,8 @@
                     Grid.Column="2"
                     HorizontalOptions="Center"
                     WidthRequest="70"
-                    HeightRequest="70"/>
+                    HeightRequest="70"
+                    Margin="1,1,1,1"/>
                 <Button Text="T"  
                     BackgroundColor="GhostWhite" 
                     TextColor="Black"
@@ -41,7 +44,8 @@
                     Grid.Column="3"
                     HorizontalOptions="Center"
                     WidthRequest="70"
-                    HeightRequest="70"/>
+                    HeightRequest="70"
+                    Margin="1,1,1,1"/>
                 <Button Text="P" 
                     BackgroundColor="GhostWhite" 
                     TextColor="Black"
@@ -49,7 +53,8 @@
                     Grid.Column="4"
                     HorizontalOptions="Center"
                     WidthRequest="70"
-                    HeightRequest="70"/>
+                    HeightRequest="70"
+                    Margin="1,1,1,1"/>
             </Grid>
         </ContentPage.Content>
 </ContentPage>
