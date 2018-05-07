@@ -39,8 +39,7 @@ namespace LokalaFavoriter
             dt = sqls.QueryRead(query);
             if (dt.Rows.Count == 1)
             {
-                MainPage m = new MainPage();
-                Navigation.PushAsync(new MainPage());
+                Navigation.PushAsync(new HomePage());
             }
             else
             {
