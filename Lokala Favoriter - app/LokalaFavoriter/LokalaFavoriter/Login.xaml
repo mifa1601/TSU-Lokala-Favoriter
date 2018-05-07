@@ -8,7 +8,7 @@
         
 
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
-            <Image Source="logotest.png" Margin="0,80,0,0" HorizontalOptions="Fill" Aspect="AspectFill"></Image>
+            <Image Source="logotest.png" padding="1" Margin="0,80,0,0" HorizontalOptions="Fill" Aspect="AspectFill"></Image>
             
             <Entry x:Name="username"
                    PlaceholderColor="Black"
