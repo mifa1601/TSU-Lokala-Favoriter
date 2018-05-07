@@ -1,5 +1,4 @@
 ﻿using LokalaFavoriter.Model;
-using LokalaFavoriter.Operations;
 using SqlServerConnections;
 using System;
 using System.Collections.Generic;
