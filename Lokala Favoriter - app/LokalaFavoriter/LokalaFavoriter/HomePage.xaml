@@ -14,8 +14,9 @@
             </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
                 </Grid.RowDefinitions>
+            <BoxView Color="Gray" Grid.Row="2" Grid.ColumnSpan="5"/>
             <Button Text="K" 
                     BackgroundColor="GhostWhite" 
                     TextColor="Black"
