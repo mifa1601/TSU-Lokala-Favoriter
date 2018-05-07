@@ -5,7 +5,7 @@
              BackgroundColor="LightSteelBlue">
     <ContentPage.Content>
 
-            <Grid VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+            <Grid VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -13,13 +13,14 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
                 </Grid.RowDefinitions>
+            <BoxView Color="Gray" Grid.Row="2" Grid.ColumnSpan="5"/>
             <Button Text="K" 
                     BackgroundColor="GhostWhite" 
                     TextColor="Black"
-                    Grid.Row="1"
+                    Grid.Row="2"
                     Grid.Column="1"
                     HorizontalOptions="Center"
                     WidthRequest="70"
@@ -28,7 +29,7 @@
                     Clicked="btn_products"
                     BackgroundColor="GhostWhite" 
                     TextColor="Black"
-                    Grid.Row="1"
+                    Grid.Row="2"
                     Grid.Column="2"
                     HorizontalOptions="Center"
                     WidthRequest="70"
@@ -36,7 +37,7 @@
                 <Button Text="T"  
                     BackgroundColor="GhostWhite" 
                     TextColor="Black"
-                    Grid.Row="1"
+                    Grid.Row="2"
                     Grid.Column="3"
                     HorizontalOptions="Center"
                     WidthRequest="70"
@@ -44,7 +45,7 @@
                 <Button Text="P" 
                     BackgroundColor="GhostWhite" 
                     TextColor="Black"
-                    Grid.Row="1"
+                    Grid.Row="2"
                     Grid.Column="4"
                     HorizontalOptions="Center"
                     WidthRequest="70"
