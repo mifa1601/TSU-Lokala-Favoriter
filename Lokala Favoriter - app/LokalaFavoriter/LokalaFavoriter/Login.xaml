@@ -20,7 +20,7 @@
             </Entry>
             <Entry x:Name="password"
                    PlaceholderColor="Black" 
-                   Placeholder="Lösernord" 
+                   Placeholder="Lösenord" 
                    IsPassword="True" 
                    HorizontalOptions="Center">
                 <Entry.WidthRequest>
