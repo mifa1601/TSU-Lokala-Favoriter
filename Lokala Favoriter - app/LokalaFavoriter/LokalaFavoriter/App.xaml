@@ -6,10 +6,10 @@
 
 		<!-- Application resource dictionary -->
         <ResourceDictionary>
-            <ControlTemplate x:Key="Navbar">
-
-                <Grid VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
-                    <Grid.ColumnDefinitions>
+            <ControlTemplate x:Key="MyNavbar">
+                
+                <!--<Grid VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">-->
+                    <!--<Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -18,10 +18,10 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="1*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <BoxView Color="LightSeaGreen" Grid.Row="2" Grid.ColumnSpan="5"/>
+                    </Grid.RowDefinitions>-->
+                    <!--<BoxView Color="LightSeaGreen" Grid.Row="2" Grid.ColumnSpan="5"/>-->
 
-                    <Button Text="K" 
+                    <!--<Button Text="K" 
                     BackgroundColor="GhostWhite" 
                     TextColor="Black"
                     Grid.Row="1"
@@ -57,8 +57,8 @@
                     HorizontalOptions="Center"
                     WidthRequest="70"
                     HeightRequest="70"
-                    Margin="1,1,1,1"/>
-                </Grid>
+                    Margin="1,1,1,1"/>-->
+                <!--</Grid>-->
                 <ContentPresenter>
                     
                 </ContentPresenter>
