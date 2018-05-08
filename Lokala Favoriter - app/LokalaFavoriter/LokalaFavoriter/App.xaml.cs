@@ -31,5 +31,6 @@ namespace LokalaFavoriter
 		{
 			// Handle when your app resumes
 		}
-	}
+
+    }
 }
