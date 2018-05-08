@@ -21,23 +21,24 @@ namespace LokalaFavoriter
         public ProductPage ()
 		{
 			InitializeComponent ();
+            ProductList.ItemsSource = GetValues();
 
-		}
+        }
 
         public List<Product> GetValues()
         {
             List<Product> ProductList = new List<Product>();
             sqls = new SqlServer();
             Product p;
-            string Myquery = "SELECT * FROM product ORDER BY id ASC";
+            string Myquery = "SELECT * FROM Products ORDER BY id ASC";
             dt = sqls.QueryRead(Myquery);
             foreach (DataRow item in dt.Rows)
             {
                 p = new Product()
                 {
-                    Id = (int)item["id"],
-                    Name = (string)item["name"],
-                    Price = (int)item["price"]
+                    Id = (int)item["Id"],
+                    Name = (string)item["Name"],
+                    Price = (int)item["Price"]
                 };
                 ProductList.Add(p);
             }
