@@ -11,8 +11,7 @@ namespace LokalaFavoriter
 	{
 		public App ()
 		{
-			InitializeComponent();
-
+            InitializeComponent();
             //MainPage = new LokalaFavoriter.Login();
             MainPage = new NavigationPage(new Login());
 		}
@@ -31,6 +30,13 @@ namespace LokalaFavoriter
 		{
 			// Handle when your app resumes
 		}
+        
+        void btn_products()
+        {
+            HomePage Home = new HomePage();
+            Home.btn_products();
+
+        }
 
     }
 }

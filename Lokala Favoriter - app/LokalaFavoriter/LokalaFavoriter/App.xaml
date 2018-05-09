@@ -6,62 +6,63 @@
 
 		<!-- Application resource dictionary -->
         <ResourceDictionary>
-            <ControlTemplate x:Key="MyNavbar">
-                
-                <!--<Grid VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">-->
-                    <!--<Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="1*"></RowDefinition>
-                    </Grid.RowDefinitions>-->
-                    <!--<BoxView Color="LightSeaGreen" Grid.Row="2" Grid.ColumnSpan="5"/>-->
+            <ControlTemplate x:Key="Navbar">
 
-                    <!--<Button Text="K" 
-                    BackgroundColor="GhostWhite" 
-                    TextColor="Black"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    HorizontalOptions="Center"
-                    WidthRequest="70"
-                    HeightRequest="70"
-                    Margin="1,1,1,1"/>
-                    <Button Text="P"
-                    Clicked="btn_products"
-                    BackgroundColor="GhostWhite" 
-                    TextColor="Black"
-                    Grid.Row="1"
-                    Grid.Column="2"
-                    HorizontalOptions="Center"
-                    WidthRequest="70"
-                    HeightRequest="70"
-                    Margin="1,1,1,1"/>
-                    <Button Text="T"  
-                    BackgroundColor="GhostWhite" 
-                    TextColor="Black"
-                    Grid.Row="1"
-                    Grid.Column="3"
-                    HorizontalOptions="Center"
-                    WidthRequest="70"
-                    HeightRequest="70"
-                    Margin="1,1,1,1"/>
-                    <Button Text="P" 
-                    BackgroundColor="GhostWhite" 
-                    TextColor="Black"
-                    Grid.Row="1"
-                    Grid.Column="4"
-                    HorizontalOptions="Center"
-                    WidthRequest="70"
-                    HeightRequest="70"
-                    Margin="1,1,1,1"/>-->
-                <!--</Grid>-->
-                <ContentPresenter>
+                <StackLayout>
                     
-                </ContentPresenter>
+                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Center" BackgroundColor="LightSeaGreen">
+
+                            <Button Text="K" 
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalOptions="Center"
+                        WidthRequest="70"
+                        HeightRequest="70"
+                        Margin="1,1,1,1"/>
+
+                            <Button Text="P"
+                        
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        HorizontalOptions="Center"
+                        WidthRequest="70"
+                        HeightRequest="70"
+                        Margin="1,1,1,1"/>
+
+                            <Button Text="T"  
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        HorizontalOptions="Center"
+                        WidthRequest="70"
+                        HeightRequest="70"
+                        Margin="1,1,1,1"/>
+
+                            <Button Text="S" 
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        Grid.Row="1"
+                        Grid.Column="4"
+                        HorizontalOptions="Center"
+                        WidthRequest="70"
+                        HeightRequest="70"
+                        Margin="1,1,1,1"/>
+
+                        </StackLayout>
+
+
+
+                    <ContentPresenter>
+
+                    </ContentPresenter>
+                </StackLayout>
+
+
             </ControlTemplate>
         </ResourceDictionary>
 
