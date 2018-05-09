@@ -12,7 +12,7 @@
                     
                         <StackLayout Orientation="Horizontal"  HorizontalOptions="Center" BackgroundColor="LightSeaGreen">
 
-                            <Button Text="K" 
+                            <Button Text="Kundvagn" 
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
                         Grid.Row="1"
@@ -22,8 +22,8 @@
                         HeightRequest="70"
                         Margin="1,1,1,1"/>
 
-                            <Button Text="P"
-                        
+                            <Button Text="Produkter"
+                                    
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
                         Grid.Row="1"
@@ -33,7 +33,7 @@
                         HeightRequest="70"
                         Margin="1,1,1,1"/>
 
-                            <Button Text="T"  
+                            <Button Text="Topplista"  
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
                         Grid.Row="1"
@@ -43,7 +43,7 @@
                         HeightRequest="70"
                         Margin="1,1,1,1"/>
 
-                            <Button Text="S" 
+                            <Button Text="Profil" 
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
                         Grid.Row="1"
