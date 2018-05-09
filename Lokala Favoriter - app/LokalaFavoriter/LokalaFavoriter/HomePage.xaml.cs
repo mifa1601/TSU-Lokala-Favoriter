@@ -21,9 +21,6 @@ namespace LokalaFavoriter
             base.OnAppearing();
             NavigationPage.SetHasNavigationBar(this, false);
         }
-        public void btn_products()
-        {
-            Navigation.PushAsync(new ProductPage());
-        }
+        
     }
 }

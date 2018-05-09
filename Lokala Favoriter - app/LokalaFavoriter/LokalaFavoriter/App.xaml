@@ -24,7 +24,8 @@
                         HeightRequest="100"
                         Margin="1,1,1,1"/>
 
-                <Button Text="Produkter"            
+                <Button Text="Produkter"
+                        Clickable="btn_products"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
                         FontSize="11"

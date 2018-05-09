@@ -31,11 +31,7 @@ namespace LokalaFavoriter
 			// Handle when your app resumes
 		}
         
-        async void btn_products()
-        {
-            HomePage Home = new HomePage();
-
-        }
+        
 
     }
 }

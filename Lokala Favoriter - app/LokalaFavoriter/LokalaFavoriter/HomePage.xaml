@@ -6,7 +6,5 @@
              ControlTemplate="{StaticResource Navbar}">
 
     <ContentPage.Content>
-
- 
-        </ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>
