@@ -15,8 +15,27 @@ namespace LokalaFavoriter
             //MainPage = new LokalaFavoriter.Login();
             MainPage = new NavigationPage(new Login());
 		}
-
-		protected override void OnStart ()
+        void Btn_products(Object sender, System.EventArgs e)
+        {
+            var page = new ProductPage();
+            MainPage.Navigation.PushAsync(page);
+        }
+        void Btn_cart(Object sender, System.EventArgs e)
+        {
+            var page = new CartPage();
+            MainPage.Navigation.PushAsync(page);
+        }
+        void Btn_profile(Object sender, System.EventArgs e)
+        {
+            var page = new ProfilePage();
+            MainPage.Navigation.PushAsync(page);
+        }
+        void Btn_toplist(Object sender, System.EventArgs e)
+        {
+            var page = new ToplistPage();
+            MainPage.Navigation.PushAsync(page);
+        }
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}

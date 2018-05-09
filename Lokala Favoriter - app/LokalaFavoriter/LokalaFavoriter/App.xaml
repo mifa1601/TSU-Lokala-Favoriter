@@ -16,6 +16,7 @@
                         <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" BackgroundColor="LightSeaGreen">
 
                 <Button Text="Kundvagn" 
+                        Clicked="Btn_cart"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
                         FontSize="11"
@@ -25,7 +26,7 @@
                         Margin="1,1,1,1"/>
 
                 <Button Text="Produkter"
-                        
+                        Clicked="Btn_products"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
                         FontSize="11"
@@ -34,7 +35,8 @@
                         HeightRequest="100"
                         Margin="1,1,1,1"/>
 
-                <Button Text="Topplista"  
+                <Button Text="Topplista" 
+                        Clicked="Btn_toplist"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
                         FontSize="11"
@@ -43,7 +45,8 @@
                         HeightRequest="100"
                         Margin="1,1,1,1"/>
 
-                <Button Text="Profil" 
+                <Button Text="Profil"
+                        Clicked="Btn_profile"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
                         FontSize="11"
