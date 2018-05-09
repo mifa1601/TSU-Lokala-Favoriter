@@ -9,60 +9,66 @@
 
 
             <ControlTemplate x:Key="Navbar">
+                <Grid Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
 
-                
-                <StackLayout>
-                    
-                        <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" BackgroundColor="LightSeaGreen">
 
-                <Button Text="Kundvagn" 
+
+
+                    <ContentPresenter Grid.Row="1" VerticalOptions="Start">
+
+                        </ContentPresenter>
+                    <BoxView Grid.Row="2" BackgroundColor="Black" WidthRequest="400"></BoxView>
+                    <StackLayout Grid.Row="2" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+
+                        <Button Text="Kundvagn" 
                         Clicked="Btn_cart"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
-                        FontSize="11"
+                        FontSize="10"
                         HorizontalOptions="Center"
-                        WidthRequest="100"
-                        HeightRequest="100"
+                        WidthRequest="80"
+                        HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-                <Button Text="Produkter"
+                        <Button Text="Produkter"
                         Clicked="Btn_products"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
-                        FontSize="11"
+                        FontSize="10"
                         HorizontalOptions="Center"
-                        WidthRequest="100"
-                        HeightRequest="100"
+                        WidthRequest="80"
+                        HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-                <Button Text="Topplista" 
+                        <Button Text="Topplista" 
                         Clicked="Btn_toplist"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
-                        FontSize="11"
+                        FontSize="10"
                         HorizontalOptions="Center"
-                        WidthRequest="100"
-                        HeightRequest="100"
+                        WidthRequest="80"
+                        HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-                <Button Text="Profil"
+                        <Button Text="Profil"
                         Clicked="Btn_profile"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
-                        FontSize="11"
+                        FontSize="10"
                         HorizontalOptions="Center"
-                        WidthRequest="100"
-                        HeightRequest="100"
+                        WidthRequest="80"
+                        HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-                        </StackLayout>
+                    </StackLayout>
+                    
+                </Grid>
 
 
-
-                    <ContentPresenter>
-
-                    </ContentPresenter>
-                </StackLayout>
 
 
             </ControlTemplate>
