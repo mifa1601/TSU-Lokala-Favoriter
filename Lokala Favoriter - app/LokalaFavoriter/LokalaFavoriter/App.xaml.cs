@@ -31,10 +31,9 @@ namespace LokalaFavoriter
 			// Handle when your app resumes
 		}
         
-        void btn_products()
+        async void btn_products()
         {
             HomePage Home = new HomePage();
-            Home.btn_products();
 
         }
 

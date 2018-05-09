@@ -6,51 +6,49 @@
 
 		<!-- Application resource dictionary -->
         <ResourceDictionary>
+
+
             <ControlTemplate x:Key="Navbar">
 
+                
                 <StackLayout>
                     
-                        <StackLayout Orientation="Horizontal"  HorizontalOptions="Center" BackgroundColor="LightSeaGreen">
+                        <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" BackgroundColor="LightSeaGreen">
 
-                            <Button Text="Kundvagn" 
+                <Button Text="Kundvagn" 
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
-                        Grid.Row="1"
-                        Grid.Column="1"
+                        FontSize="11"
                         HorizontalOptions="Center"
-                        WidthRequest="70"
-                        HeightRequest="70"
+                        WidthRequest="100"
+                        HeightRequest="100"
                         Margin="1,1,1,1"/>
 
-                            <Button Text="Produkter"
-                                    
+                <Button Text="Produkter"            
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
-                        Grid.Row="1"
-                        Grid.Column="2"
+                        FontSize="11"
                         HorizontalOptions="Center"
-                        WidthRequest="70"
-                        HeightRequest="70"
+                        WidthRequest="100"
+                        HeightRequest="100"
                         Margin="1,1,1,1"/>
 
-                            <Button Text="Topplista"  
+                <Button Text="Topplista"  
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
-                        Grid.Row="1"
-                        Grid.Column="3"
+                        FontSize="11"
                         HorizontalOptions="Center"
-                        WidthRequest="70"
-                        HeightRequest="70"
+                        WidthRequest="100"
+                        HeightRequest="100"
                         Margin="1,1,1,1"/>
 
-                            <Button Text="Profil" 
+                <Button Text="Profil" 
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
-                        Grid.Row="1"
-                        Grid.Column="4"
+                        FontSize="11"
                         HorizontalOptions="Center"
-                        WidthRequest="70"
-                        HeightRequest="70"
+                        WidthRequest="100"
+                        HeightRequest="100"
                         Margin="1,1,1,1"/>
 
                         </StackLayout>
