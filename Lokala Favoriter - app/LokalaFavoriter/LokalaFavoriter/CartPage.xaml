@@ -5,9 +5,38 @@
              ControlTemplate="{StaticResource Navbar}">
     <ContentPage.Content>
 
-            <Label Text="Cart"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <!--<ListView x:Name="CartList">
+            <ListView.ItemTemplate>
+
+                --><!--<DataTemplate>
+                    <TextCell Text="{Binding Name}" Grid.Row="1"/>
+                    
+                </DataTemplate>--><!--
+
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Name}" ClassId="Product_id"/>
+                                <Image  Source="add.png"
+                                        WidthRequest="50"
+                                        HeightRequest="50"
+                                        HorizontalOptions="EndAndExpand">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="btn_remove" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+
+
+            </ListView.ItemTemplate>
+        </ListView>-->
 
     </ContentPage.Content>
 </ContentPage>

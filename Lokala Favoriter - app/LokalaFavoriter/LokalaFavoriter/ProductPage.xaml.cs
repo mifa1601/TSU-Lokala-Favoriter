@@ -18,7 +18,7 @@ namespace LokalaFavoriter
         private DataTable dt;
         private SqlServer sqls;
 
-        public List<string> Cart = new List<string>();
+        public List<Product> Cart = new List<Product>();
 
         public ProductPage ()
 		{
@@ -54,7 +54,8 @@ namespace LokalaFavoriter
         private void btn_add(object sender, CustomParam e)
         {
             var product = e.Parameter;
-            
+            Cart.Add(product);
+            DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK");
         }
 
         private void LoginButton_OnClicked(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LokalaFavoriter.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,18 @@ namespace LokalaFavoriter
 		{
 			InitializeComponent ();
 		}
+
+        public class CustomParam
+        {
+            public Product Parameter { get; set; }
+        }
+
+        private void btn_remove(object sender, CustomParam e)
+        {
+            var product = e.Parameter;
+            //Cart.Remove(product);
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
