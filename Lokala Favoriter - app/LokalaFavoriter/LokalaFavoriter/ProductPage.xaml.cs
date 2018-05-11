@@ -18,11 +18,12 @@ namespace LokalaFavoriter
         private DataTable dt;
         private SqlServer sqls;
 
+        public List<string> Cart = new List<string>();
+
         public ProductPage ()
 		{
 			InitializeComponent ();
             ProductList.ItemsSource = GetValues();
-
         }
 
         public List<Product> GetValues()
@@ -43,6 +44,23 @@ namespace LokalaFavoriter
                 ProductList.Add(p);
             }
             return ProductList;
+        }
+
+        public class CustomParam
+        {
+            public Product Parameter { get; set; }
+        }
+
+        private void btn_add(object sender, CustomParam e)
+        {
+            var product = e.Parameter;
+            
+        }
+
+        private void LoginButton_OnClicked(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            var classId = button.ClassId;
         }
 
         protected override void OnAppearing()
