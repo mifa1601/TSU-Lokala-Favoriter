@@ -13,18 +13,20 @@ namespace LokalaFavoriter
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class HomePage : ContentPage
 	{
-		public HomePage ()
+		public HomePage (string username)
 		{
 			InitializeComponent ();
-		}
-        public HomePage(string username)
-        {
             HomePageVM MyVM = new HomePageVM
             {
                 LoggedInUser = username
             };
-
+            BindingContext = MyVM;
         }
+        //public HomePage(string username)
+        //{
+            
+
+        //}
         protected override void OnAppearing()
         {
             base.OnAppearing();

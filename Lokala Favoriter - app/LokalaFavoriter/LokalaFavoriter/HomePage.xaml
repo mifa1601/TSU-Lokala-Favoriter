@@ -4,18 +4,11 @@
              x:Class="LokalaFavoriter.HomePage"
              BackgroundColor="LightSteelBlue"
              ControlTemplate="{StaticResource Navbar}"
-             xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel">
-    <ContentPage.BindingContext>
-        <VM:HomePageVM/>
-    </ContentPage.BindingContext>
-    <ContentPage.Content>
-    
-        
-        
-        <Label Text="{Binding LoggedInUser}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
-        
-    
-    </ContentPage.Content>
-    
+             xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel; assembly=LokalaFavoriter">
 
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Text="{Binding LoggedInUser}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
