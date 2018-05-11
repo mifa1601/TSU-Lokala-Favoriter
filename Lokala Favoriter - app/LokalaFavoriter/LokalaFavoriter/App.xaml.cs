@@ -13,7 +13,7 @@ namespace LokalaFavoriter
 		{
             InitializeComponent();
             //MainPage = new LokalaFavoriter.Login();
-            MainPage = new NavigationPage(new Login());
+            MainPage = new NavigationPage(new ProductPage());
 		}
         void Btn_products(Object sender, System.EventArgs e)
         {
