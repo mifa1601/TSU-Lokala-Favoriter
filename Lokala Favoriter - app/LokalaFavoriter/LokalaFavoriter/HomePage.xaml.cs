@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LokalaFavoriter.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,14 @@ namespace LokalaFavoriter
 		{
 			InitializeComponent ();
 		}
+        public HomePage(string username)
+        {
+            HomePageVM MyVM = new HomePageVM
+            {
+                LoggedInUser = username
+            };
+
+        }
         protected override void OnAppearing()
         {
             base.OnAppearing();

@@ -3,8 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LokalaFavoriter.HomePage"
              BackgroundColor="LightSteelBlue"
-             ControlTemplate="{StaticResource Navbar}">
-
+             ControlTemplate="{StaticResource Navbar}"
+             xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel">
+    <ContentPage.BindingContext>
+        <VM:HomePageVM/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
+    
+        
+        
+        <Label Text="{Binding LoggedInUser}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+        
+    
     </ContentPage.Content>
+    
+
 </ContentPage>
