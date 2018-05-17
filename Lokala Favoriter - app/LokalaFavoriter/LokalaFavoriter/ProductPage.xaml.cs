@@ -22,7 +22,8 @@ namespace LokalaFavoriter
 
 
         public List<Product> Cart = new List<Product>();
-
+        CartPageVM Cartvm = new CartPageVM();
+        
 
         public ProductPage ()
 		{
@@ -57,11 +58,12 @@ namespace LokalaFavoriter
 
         public List<Product> Btn_add(object sender, CustomParam e)
         {
-
+            
             var product = e.Parameter;
-            Cart.Add(product);
+            Cartvm.Cartlist.Add(product);
+
             DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK");
-            return Cart;
+            return Cartvm.Cartlist;
             
         }
 

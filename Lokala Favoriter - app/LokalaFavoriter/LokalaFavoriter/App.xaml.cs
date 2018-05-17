@@ -23,7 +23,7 @@ namespace LokalaFavoriter
         }
         void Btn_cart(Object sender, System.EventArgs e)
         {
-            //ProductPage p = new ProductPage();
+            ProductPage p = new ProductPage();
             var page = new CartPage();
             MainPage.Navigation.PushAsync(page);
         }

@@ -16,15 +16,19 @@ namespace LokalaFavoriter
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CartPage : ContentPage
 	{
-        ProductPage p = new ProductPage();
+        
 
 
         public CartPage()
         {
             InitializeComponent();
-            
-            MyCart.ItemsSource = p.Cart;
-            
+
+            CartPageVM CartVM = new CartPageVM
+            {
+                
+            };
+            BindingContext = CartVM;
+
         }
 
   //      public CartPage (List<Product> CustomerCart)
@@ -45,16 +49,16 @@ namespace LokalaFavoriter
             public Product Parameter { get; set; }
         }
 
-        public List<Product> GetValues()
-        {
-            List<Product> MyCart = new List<Product>();
-            ProductPage p = new ProductPage();
-            foreach (Product item in p.Cart)
-            {
-                MyCart.Add(item);
-            }
-            return MyCart;
-        }
+        //public List<Product> GetValues()
+        //{
+        //    //List<Product> MyCart = new List<Product>();
+        //    //CartPageVM Cart = new CartPageVM();
+        //    //foreach (Product item in Cart.Cartlist)
+        //    //{
+        //    //    MyCart.Add(item);
+        //    //}
+        //    //return MyCart;
+        //}
 
         //private void btn_remove(object sender, CustomParam e)
         //{
