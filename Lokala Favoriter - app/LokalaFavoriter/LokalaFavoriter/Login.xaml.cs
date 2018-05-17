@@ -45,11 +45,12 @@ namespace LokalaFavoriter
                     u = new User()
                     {
                         Id = (int)item["Id"],
-                        Username = (string)item["Username"]
+                        Username = (string)item["Username"],
+                        Group_id = (int)item["Group_id"]
                     };
 
                 }
-                Navigation.PushAsync(new HomePage(u.Id));
+                Navigation.PushAsync(new HomePage(u.Username, u.Id));
             }
             else
             {
