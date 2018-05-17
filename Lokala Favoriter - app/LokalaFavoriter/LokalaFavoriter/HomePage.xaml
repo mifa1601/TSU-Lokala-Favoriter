@@ -21,7 +21,6 @@
             <StackLayout Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
                 <Label x:Name="username" Text="{Binding LoggedInUser}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
                 <Label Text="{Binding User_id}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
-                <Label x:Name="groupname" Text="{Binding Groupname}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
             </StackLayout>
 
             <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
