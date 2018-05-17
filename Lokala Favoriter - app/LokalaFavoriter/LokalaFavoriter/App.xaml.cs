@@ -20,13 +20,15 @@ namespace LokalaFavoriter
         
         void Btn_products(Object sender, System.EventArgs e)
         {
+
+
             var page = new ProductPage();
             MainPage.Navigation.PushAsync(page);
         }
         void Btn_cart(Object sender, System.EventArgs e)
         {
-            ProductPage p = new ProductPage();
-            MainPage.Navigation.PushAsync(new CartPage(p.GetCartValue()));
+            var page = new CartPage();
+            MainPage.Navigation.PushAsync(page);
         }
         void Btn_profile(Object sender, System.EventArgs e)
         {

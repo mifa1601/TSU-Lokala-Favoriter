@@ -19,7 +19,7 @@ namespace LokalaFavoriter
         private DataTable dt;
         private SqlServer sqls;
 
-        public ProductPage()
+        public ProductPage(int user_id)
         {
             InitializeComponent();
             ProductList.ItemsSource = GetValues();
@@ -55,7 +55,12 @@ namespace LokalaFavoriter
         public void Btn_add(object sender, CustomParam e)
         {
             var product = e.Parameter;
-            TempCart.Add(product);
+
+            sqls = new SqlServer();
+            
+            string Myquery = "SELECT * FROM Products ORDER BY id ASC";
+            dt = sqls.QueryRead(Myquery);
+
             DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK"); 
         }
         public List<Product> GetCartValue()

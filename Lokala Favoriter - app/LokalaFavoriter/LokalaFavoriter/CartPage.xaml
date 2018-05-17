@@ -7,13 +7,13 @@
              xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel; assembly=LokalaFavoriter">
 
     <ContentPage.Content>
-        <ListView x:Name="Cartlist">
+        <!--<ListView x:Name="Cartlist">
             <ListView.ItemTemplate>
 
-                <!--<DataTemplate>
+                --><!--<DataTemplate>
                     <TextCell Text="{Binding Name}" Grid.Row="1"/>
                     
-                </DataTemplate>-->
+                </DataTemplate>--><!--
 
                 <DataTemplate>
                     <ViewCell>
@@ -39,6 +39,6 @@
 
 
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView>-->
     </ContentPage.Content>
 </ContentPage>

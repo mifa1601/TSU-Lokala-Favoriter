@@ -17,29 +17,18 @@ namespace LokalaFavoriter
 	public partial class CartPage : ContentPage
 	{
         
-        public CartPage(List<Product> MyTempCart)
+        public CartPage()
         {
             InitializeComponent();
 
-            CartPageVM CartVM = new CartPageVM
-            {
-                Cartlist = MyTempCart
-            };
-            BindingContext = CartVM;
+            //CartPageVM CartVM = new CartPageVM
+            //{
+            //    Cartlist = MyTempCart
+            //};
+            //BindingContext = CartVM;
 
         }
 
-  //      public CartPage (List<Product> CustomerCart)
-		//{
-
-            
-            
-
-  //          //CartPageVM Cart = new CartPageVM()
-  //          //{
-  //          //    Cartlist = MyCart
-  //          //};
-  //      }
 
 
         public class CustomParam
@@ -47,22 +36,7 @@ namespace LokalaFavoriter
             public Product Parameter { get; set; }
         }
 
-        //public List<Product> GetValues()
-        //{
-        //    //List<Product> MyCart = new List<Product>();
-        //    //CartPageVM Cart = new CartPageVM();
-        //    //foreach (Product item in Cart.Cartlist)
-        //    //{
-        //    //    MyCart.Add(item);
-        //    //}
-        //    //return MyCart;
-        //}
-
-        //private void btn_remove(object sender, CustomParam e)
-        //{
-        //    var product = e.Parameter;
-        //    MyCart.(product);
-        //}
+ 
 
         protected override void OnAppearing()
         {
