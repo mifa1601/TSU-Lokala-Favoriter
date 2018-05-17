@@ -3,15 +3,81 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LokalaFavoriter.HomePage"
              BackgroundColor="LightSteelBlue"
-             ControlTemplate="{StaticResource Navbar}"
              xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel; assembly=LokalaFavoriter">
 
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-            <Label x:Name="username" Text="{Binding LoggedInUser}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
-            <Label Text="{Binding User_id}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
-            <Label x:Name="groupname" Text="{Binding Groupname}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
-            <Button x:Name="TestKnapp" Text="Test" Clicked="Btn_products"/>
-        </StackLayout>
+
+
+        <Grid Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+
+
+
+            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+
+            <StackLayout Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label x:Name="username" Text="{Binding LoggedInUser}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+                <Label Text="{Binding User_id}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+                <Label x:Name="groupname" Text="{Binding Groupname}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+            </StackLayout>
+
+            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+
+            <BoxView Grid.Row="2" BackgroundColor="Black" WidthRequest="400"></BoxView>
+            <StackLayout Grid.Row="2" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+
+                <Button Text="Kundvagn" 
+                        Clicked="Btn_cart"
+                        BindingContext="CartValue"
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        Margin="1,1,1,1"/>
+
+                <Button Text="Produkter"
+                        Clicked="Btn_products"
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        Margin="1,1,1,1"/>
+
+                <Button Text="Topplista" 
+                        Clicked="Btn_toplist"
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        Margin="1,1,1,1"/>
+
+                <Button Text="Profil"
+                        Clicked="Btn_profile"
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        Margin="1,1,1,1"/>
+
+            </StackLayout>
+
+        </Grid>
+
+
+
+
+
+
     </ContentPage.Content>
 </ContentPage>

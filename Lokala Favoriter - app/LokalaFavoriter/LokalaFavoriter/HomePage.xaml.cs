@@ -58,11 +58,7 @@ namespace LokalaFavoriter
             }
             return MyId = u.Id;
         }
-        void Btn_products(Object sender, System.EventArgs e)
-        {
-            var page = new ProductPage(GetId());
-            Navigation.PushAsync(page);
-        }
+ 
 
         public string group()
         {
@@ -107,8 +103,28 @@ namespace LokalaFavoriter
 
             return group;
         }
-
-
+        #region buttons
+        void Btn_products(Object sender, System.EventArgs e)
+        {
+            var page = new ProductPage(GetId());
+            Navigation.PushAsync(page);
+        }
+        void Btn_cart(Object sender, System.EventArgs e)
+        {
+            var page = new CartPage();
+            Navigation.PushAsync(page);
+        }
+        void Btn_profile(Object sender, System.EventArgs e)
+        {
+            var page = new ProfilePage();
+            Navigation.PushAsync(page);
+        }
+        void Btn_toplist(Object sender, System.EventArgs e)
+        {
+            var page = new ToplistPage();
+            Navigation.PushAsync(page);
+        }
+        #endregion
         protected override void OnAppearing()
         {
             base.OnAppearing();

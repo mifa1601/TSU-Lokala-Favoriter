@@ -3,44 +3,112 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LokalaFavoriter.ProductPage"
              BackgroundColor="LightSteelBlue"
-             ControlTemplate="{StaticResource Navbar}"
              xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel; assembly=LokalaFavoriter">
     <ContentPage.Content>
-        <StackLayout>
-        <Label x:Name="Testknapp" Text="{Binding User_id}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
-        <ListView x:Name="ProductList">
-            <ListView.ItemTemplate>
 
-                <!--<DataTemplate>
-                    <TextCell Text="{Binding Name}" Grid.Row="1"/>
-                    
-                </DataTemplate>-->
 
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.View>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*" />
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" Text="{Binding Name}" ClassId="Product_id"/>
-                                <Label Grid.Column="0" Text="{Binding Price, StringFormat=\{0\} Kr}" VerticalOptions="CenterAndExpand"/>
-                                <Image  Source="add.png"
+
+
+            <Grid Margin="0,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+
+
+
+            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+
+            <StackLayout Grid.Row="1">
+                <Label x:Name="Testknapp" Text="{Binding User_id}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+                <ListView x:Name="ProductList">
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Text="{Binding Name}" ClassId="Product_id"/>
+                                        <Label Grid.Column="0" Text="{Binding Price, StringFormat=\{0\} Kr}" VerticalOptions="CenterAndExpand"/>
+                                        <Image  Source="add.png"
                                         WidthRequest="30"
                                         HeightRequest="30"
                                         HorizontalOptions="EndAndExpand">
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="Btn_add" />
-                                    </Image.GestureRecognizers>
-                                </Image>
-                            </Grid>
-                        </ViewCell.View>
-                    </ViewCell>
-                </DataTemplate>
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="Btn_add" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
 
 
-        </ListView.ItemTemplate>
-        </ListView>
-        </StackLayout>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+
+            <BoxView Grid.Row="2" BackgroundColor="Black" WidthRequest="400"></BoxView>
+                <StackLayout Grid.Row="2" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+
+                    <Button Text="Kundvagn" 
+                        Clicked="Btn_cart"
+                        BindingContext="CartValue"
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        Margin="1,1,1,1"/>
+
+                    <Button Text="Produkter"
+                        Clicked="Btn_products"
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        Margin="1,1,1,1"/>
+
+                    <Button Text="Topplista" 
+                        Clicked="Btn_toplist"
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        Margin="1,1,1,1"/>
+
+                    <Button Text="Profil"
+                        Clicked="Btn_profile"
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        Margin="1,1,1,1"/>
+
+                </StackLayout>
+
+            </Grid>
+
+
+
+
+
+
+
+
+
+
     </ContentPage.Content>
 </ContentPage>

@@ -68,7 +68,7 @@ namespace LokalaFavoriter
 
             DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK"); 
         }
-        
+
 
 
         private void LoginButton_OnClicked(object sender, EventArgs e)
@@ -76,6 +76,30 @@ namespace LokalaFavoriter
             var button = (Button)sender;
             var classId = button.ClassId;
         }
+
+        #region buttons
+        void Btn_products(Object sender, System.EventArgs e)
+        {
+            int id = Convert.ToInt32(Testknapp.Text);
+            var page = new ProductPage(id);
+            Navigation.PushAsync(page);
+        }
+        void Btn_cart(Object sender, System.EventArgs e)
+        {
+            var page = new CartPage();
+            Navigation.PushAsync(page);
+        }
+        void Btn_profile(Object sender, System.EventArgs e)
+        {
+            var page = new ProfilePage();
+            Navigation.PushAsync(page);
+        }
+        void Btn_toplist(Object sender, System.EventArgs e)
+        {
+            var page = new ToplistPage();
+            Navigation.PushAsync(page);
+        }
+        #endregion
 
         protected override void OnAppearing()
         {
