@@ -10,12 +10,14 @@ namespace LokalaFavoriter
 {
 	public partial class App : Application
 	{
-		public App ()
+        
+        public App ()
 		{
             InitializeComponent();
             //MainPage = new LokalaFavoriter.Login();
-            MainPage = new NavigationPage(new Login());
-		}
+            MainPage = new NavigationPage(new Login()); 
+        }
+        
         void Btn_products(Object sender, System.EventArgs e)
         {
             var page = new ProductPage();
@@ -24,8 +26,7 @@ namespace LokalaFavoriter
         void Btn_cart(Object sender, System.EventArgs e)
         {
             ProductPage p = new ProductPage();
-            var page = new CartPage();
-            MainPage.Navigation.PushAsync(page);
+            MainPage.Navigation.PushAsync(new CartPage(p.GetCartValue()));
         }
         void Btn_profile(Object sender, System.EventArgs e)
         {

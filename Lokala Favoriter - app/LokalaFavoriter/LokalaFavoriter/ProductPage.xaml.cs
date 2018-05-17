@@ -19,18 +19,14 @@ namespace LokalaFavoriter
         private DataTable dt;
         private SqlServer sqls;
 
-
-
-        public List<Product> Cart = new List<Product>();
-        CartPageVM Cartvm = new CartPageVM();
-        
-
-        public ProductPage ()
-		{
-			InitializeComponent ();
+        public ProductPage()
+        {
+            InitializeComponent();
             ProductList.ItemsSource = GetValues();
         }
 
+        public List<Product> TempCart = new List<Product>();
+        
         public List<Product> GetValues()
         {
             List<Product> ProductList = new List<Product>();
@@ -56,17 +52,17 @@ namespace LokalaFavoriter
             public Product Parameter { get; set; }
         }
 
-        public List<Product> Btn_add(object sender, CustomParam e)
+        public void Btn_add(object sender, CustomParam e)
         {
-            
             var product = e.Parameter;
-            Cartvm.Cartlist.Add(product);
-
-            DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK");
-            return Cartvm.Cartlist;
-            
+            TempCart.Add(product);
+            DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK"); 
         }
-
+        public List<Product> GetCartValue()
+        {
+            List<Product> MyTempCart = TempCart;
+            return MyTempCart;
+        }
 
 
         private void LoginButton_OnClicked(object sender, EventArgs e)
