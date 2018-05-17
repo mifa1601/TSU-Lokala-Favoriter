@@ -17,15 +17,13 @@ namespace LokalaFavoriter
 	public partial class CartPage : ContentPage
 	{
         
-
-
-        public CartPage()
+        public CartPage(List<Product> MyTempCart)
         {
             InitializeComponent();
 
             CartPageVM CartVM = new CartPageVM
             {
-                
+                Cartlist = MyTempCart
             };
             BindingContext = CartVM;
 
