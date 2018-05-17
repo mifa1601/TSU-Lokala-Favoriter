@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LokalaFavoriter.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace LokalaFavoriter
         }
         void Btn_cart(Object sender, System.EventArgs e)
         {
+            //ProductPage p = new ProductPage();
             var page = new CartPage();
             MainPage.Navigation.PushAsync(page);
         }

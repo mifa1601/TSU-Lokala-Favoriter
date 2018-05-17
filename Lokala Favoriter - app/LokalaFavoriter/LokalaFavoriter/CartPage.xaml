@@ -2,16 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LokalaFavoriter.CartPage"
+             BackgroundColor="LightSteelBlue"
              ControlTemplate="{StaticResource Navbar}">
-    <ContentPage.Content>
 
-        <!--<ListView x:Name="CartList">
+    <ContentPage.Content>
+        <ListView x:Name="MyCart">
             <ListView.ItemTemplate>
 
-                --><!--<DataTemplate>
+                <!--<DataTemplate>
                     <TextCell Text="{Binding Name}" Grid.Row="1"/>
                     
-                </DataTemplate>--><!--
+                </DataTemplate>-->
 
                 <DataTemplate>
                     <ViewCell>
@@ -21,12 +22,13 @@
                                     <ColumnDefinition Width="1*" />
                                 </Grid.ColumnDefinitions>
                                 <Label Grid.Column="0" Text="{Binding Name}" ClassId="Product_id"/>
+                                <Label Grid.Column="0" Text="{Binding Price, StringFormat=\{0\} Kr}" VerticalOptions="CenterAndExpand"/>
                                 <Image  Source="add.png"
-                                        WidthRequest="50"
-                                        HeightRequest="50"
+                                        WidthRequest="30"
+                                        HeightRequest="30"
                                         HorizontalOptions="EndAndExpand">
                                     <Image.GestureRecognizers>
-                                        <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="btn_remove" />
+                                        <TapGestureRecognizer CommandParameter="{Binding .}" />
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Grid>
@@ -36,7 +38,6 @@
 
 
             </ListView.ItemTemplate>
-        </ListView>-->
-
+        </ListView>
     </ContentPage.Content>
 </ContentPage>

@@ -1,4 +1,5 @@
 ﻿using LokalaFavoriter.Model;
+using LokalaFavoriter.ViewModel;
 using SqlServerConnections;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,10 @@ namespace LokalaFavoriter
         private DataTable dt;
         private SqlServer sqls;
 
+
+
         public List<Product> Cart = new List<Product>();
+
 
         public ProductPage ()
 		{
@@ -51,12 +55,17 @@ namespace LokalaFavoriter
             public Product Parameter { get; set; }
         }
 
-        private void btn_add(object sender, CustomParam e)
+        public List<Product> Btn_add(object sender, CustomParam e)
         {
+
             var product = e.Parameter;
             Cart.Add(product);
             DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK");
+            return Cart;
+            
         }
+
+
 
         private void LoginButton_OnClicked(object sender, EventArgs e)
         {
