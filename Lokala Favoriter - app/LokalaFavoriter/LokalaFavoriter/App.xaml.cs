@@ -25,8 +25,9 @@ namespace LokalaFavoriter
         }
         void Btn_cart(Object sender, System.EventArgs e)
         {
-            ProductPage p = new ProductPage();
-            MainPage.Navigation.PushAsync(new CartPage(p.GetCartValue()));
+            CartPage page = new CartPage();
+            
+            MainPage.Navigation.PushAsync(new CartPage());
         }
         void Btn_profile(Object sender, System.EventArgs e)
         {

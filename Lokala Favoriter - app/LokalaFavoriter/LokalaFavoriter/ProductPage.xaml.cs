@@ -25,7 +25,7 @@ namespace LokalaFavoriter
             ProductList.ItemsSource = GetValues();
         }
 
-        public List<Product> TempCart = new List<Product>();
+        public static List<Product> TempCart = new List<Product>();
         
         public List<Product> GetValues()
         {
@@ -56,15 +56,10 @@ namespace LokalaFavoriter
         {
             var product = e.Parameter;
             TempCart.Add(product);
-            DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK"); 
+            DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK");
+            
         }
-        public List<Product> GetCartValue()
-        {
-            List<Product> MyTempCart = TempCart;
-            return MyTempCart;
-        }
-
-
+       
         private void LoginButton_OnClicked(object sender, EventArgs e)
         {
             var button = (Button)sender;
