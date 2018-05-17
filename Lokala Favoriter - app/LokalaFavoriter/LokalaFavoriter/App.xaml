@@ -26,6 +26,7 @@
 
                         <Button Text="Kundvagn" 
                         Clicked="Btn_cart"
+                        BindingContext="CartValue"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
                         FontSize="10"
