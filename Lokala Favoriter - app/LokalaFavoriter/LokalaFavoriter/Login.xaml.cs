@@ -32,15 +32,24 @@ namespace LokalaFavoriter
         {
             sqls = new SqlServer();
             User u = new User();
-            int user_id;
-            user_id = u.Id;
+
+            
             u.Username = username;
             u.Password = password;
             string query = "SELECT * FROM users WHERE username = '" + u.Username + "' AND password = '" + u.Password + "'";
             dt = sqls.QueryRead(query);
             if (dt.Rows.Count == 1)
             {
-                Navigation.PushAsync(new HomePage(user_id));
+                foreach (DataRow item in dt.Rows)
+                {
+                    u = new User()
+                    {
+                        Id = (int)item["Id"],
+                        Username = (string)item["Username"]
+                    };
+
+                }
+                Navigation.PushAsync(new HomePage(u.Id));
             }
             else
             {
