@@ -9,5 +9,7 @@ namespace LokalaFavoriter.Model
         public int Id { get; set; }
         public string Username  { get; set; }
         public string Password { get; set; }
+        public int Points { get; set; }
+        public int Group_id { get; set; }
     }
 }
