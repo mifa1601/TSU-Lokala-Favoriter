@@ -18,13 +18,13 @@ namespace LokalaFavoriter
             MainPage = new NavigationPage(new Login()); 
         }
         
-        void Btn_products(Object sender, System.EventArgs e)
-        {
+        //void Btn_products(Object sender, System.EventArgs e)
+        //{
 
 
-            var page = new ProductPage();
-            MainPage.Navigation.PushAsync(page);
-        }
+        //    var page = new ProductPage();
+        //    MainPage.Navigation.PushAsync(page);
+        //}
         void Btn_cart(Object sender, System.EventArgs e)
         {
             var page = new CartPage();

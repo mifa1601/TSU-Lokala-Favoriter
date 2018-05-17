@@ -35,7 +35,7 @@
                         HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-                        <Button Text="Produkter"
+                        <!--<Button Text="Produkter"
                         Clicked="Btn_products"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
@@ -43,7 +43,7 @@
                         HorizontalOptions="Center"
                         WidthRequest="80"
                         HeightRequest="80"
-                        Margin="1,1,1,1"/>
+                        Margin="1,1,1,1"/>-->
 
                         <Button Text="Topplista" 
                         Clicked="Btn_toplist"

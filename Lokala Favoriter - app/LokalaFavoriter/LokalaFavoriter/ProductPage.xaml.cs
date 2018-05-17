@@ -22,10 +22,15 @@ namespace LokalaFavoriter
         public ProductPage(int user_id)
         {
             InitializeComponent();
+            ProductPageVM MyVM = new ProductPageVM
+            {
+                User_id = user_id
+            };
+            BindingContext = MyVM;
+
             ProductList.ItemsSource = GetValues();
         }
-
-        public List<Product> TempCart = new List<Product>();
+        
         
         public List<Product> GetValues()
         {
@@ -63,11 +68,7 @@ namespace LokalaFavoriter
 
             DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK"); 
         }
-        public List<Product> GetCartValue()
-        {
-            List<Product> MyTempCart = TempCart;
-            return MyTempCart;
-        }
+        
 
 
         private void LoginButton_OnClicked(object sender, EventArgs e)

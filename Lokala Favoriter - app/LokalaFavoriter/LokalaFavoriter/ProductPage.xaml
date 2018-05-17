@@ -3,8 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LokalaFavoriter.ProductPage"
              BackgroundColor="LightSteelBlue"
-             ControlTemplate="{StaticResource Navbar}">
+             ControlTemplate="{StaticResource Navbar}"
+             xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel; assembly=LokalaFavoriter">
     <ContentPage.Content>
+        <StackLayout>
+        <Label x:Name="Testknapp" Text="{Binding User_id}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
         <ListView x:Name="ProductList">
             <ListView.ItemTemplate>
 
@@ -38,5 +41,6 @@
 
         </ListView.ItemTemplate>
         </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

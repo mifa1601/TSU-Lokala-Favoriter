@@ -11,6 +11,7 @@
             <Label x:Name="username" Text="{Binding LoggedInUser}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
             <Label Text="{Binding User_id}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
             <Label x:Name="groupname" Text="{Binding Groupname}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+            <Button x:Name="TestKnapp" Text="Test" Clicked="Btn_products"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

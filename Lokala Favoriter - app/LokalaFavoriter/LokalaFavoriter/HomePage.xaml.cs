@@ -13,15 +13,15 @@ using Xamarin.Forms.Xaml;
 
 namespace LokalaFavoriter
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class HomePage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class HomePage : ContentPage
+    {
         private SqlServer sqls;
         private DataTable dt;
 
-        public HomePage (string Username, int id)
-		{
-			InitializeComponent ();
+        public HomePage(string Username, int id)
+        {
+            InitializeComponent();
             HomePageVM MyVM = new HomePageVM
             {
                 LoggedInUser = Username,
@@ -33,13 +33,36 @@ namespace LokalaFavoriter
 
             groupname.Text = group();
 
-
         }
-        //public HomePage(string username)
-        //{
 
+        public int GetId()
+        {
+            string name = username.Text;
+            int MyId;
+            string query = "SELECT * FROM users WHERE Username = '" + name + "'";
+            dt = sqls.QueryRead(query);
+            User u = new User();
+            if (dt.Rows.Count == 1)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    u = new User()
+                    {
+                        Id = (int)item["Id"],
+                        Username = (string)item["Username"],
+                        Group_id = (int)item["Group_id"]
+                    };
 
-        //}
+                }
+
+            }
+            return MyId = u.Id;
+        }
+        void Btn_products(Object sender, System.EventArgs e)
+        {
+            var page = new ProductPage(GetId());
+            Navigation.PushAsync(page);
+        }
 
         public string group()
         {
@@ -91,6 +114,6 @@ namespace LokalaFavoriter
             base.OnAppearing();
             NavigationPage.SetHasNavigationBar(this, false);
         }
-        
+
     }
 }
