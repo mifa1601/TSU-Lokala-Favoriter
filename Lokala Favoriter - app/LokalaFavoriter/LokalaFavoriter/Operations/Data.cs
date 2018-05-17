@@ -14,6 +14,7 @@ namespace LokalaFavoriter.Operations
 
         public User GetUser(int id)
         {
+            sqls = new SqlServer();
             User MyUser;
             string query = "SELECT * FROM users WHERE Id = '" + id + "'";
             dt = sqls.QueryRead(query);
