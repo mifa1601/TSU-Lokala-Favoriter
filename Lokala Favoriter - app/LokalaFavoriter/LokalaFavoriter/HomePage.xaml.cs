@@ -19,22 +19,22 @@ namespace LokalaFavoriter
     {
         private SqlServer sqls;
         private DataTable dt;
-        private Data MyOp;
+        private MyData MyOp;
         public User MyUser = new User();
 
-        public HomePage(string Username, int id)
+        public HomePage(string Username, int user_id)
         {
-            MyOp = new Data();
+            MyOp = new MyData();
             sqls = new SqlServer();
             dt = new DataTable();
             InitializeComponent();
             HomePageVM MyVM = new HomePageVM
             {
                 LoggedInUser = Username,
-                User_id = id
+                User_id = user_id
             };
             BindingContext = MyVM;
-            MyUser = MyOp.GetUser(id);
+            MyUser = MyOp.GetUser(user_id);
         }
         
         #region buttons
@@ -45,7 +45,7 @@ namespace LokalaFavoriter
         }
         void Btn_cart(Object sender, System.EventArgs e)
         {
-            var page = new CartPage();
+            var page = new CartPage(MyUser.Id);
             Navigation.PushAsync(page);
         }
         void Btn_profile(Object sender, System.EventArgs e)

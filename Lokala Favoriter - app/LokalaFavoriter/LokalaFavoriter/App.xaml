@@ -24,7 +24,7 @@
                     <BoxView Grid.Row="2" BackgroundColor="Black" WidthRequest="400"></BoxView>
                     <StackLayout Grid.Row="2" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
 
-                        <Button Text="Kundvagn" 
+                        <!--<Button Text="Kundvagn" 
                         Clicked="Btn_cart"
                         BindingContext="CartValue"
                         BackgroundColor="GhostWhite" 
@@ -33,7 +33,7 @@
                         HorizontalOptions="Center"
                         WidthRequest="80"
                         HeightRequest="80"
-                        Margin="1,1,1,1"/>
+                        Margin="1,1,1,1"/>-->
 
                         <!--<Button Text="Produkter"
                         Clicked="Btn_products"

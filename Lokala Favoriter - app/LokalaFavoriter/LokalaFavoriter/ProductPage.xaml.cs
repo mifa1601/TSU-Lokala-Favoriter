@@ -1,4 +1,5 @@
 ﻿using LokalaFavoriter.Model;
+using LokalaFavoriter.Operations;
 using LokalaFavoriter.ViewModel;
 using SqlServerConnections;
 using System;
@@ -13,64 +14,42 @@ using Xamarin.Forms.Xaml;
 
 namespace LokalaFavoriter
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ProductPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ProductPage : ContentPage
+    {
         private DataTable dt;
         private SqlServer sqls;
+        private MyData MyOperation;
+        public User MyUser = new User();
 
         public ProductPage(int user_id)
         {
+            MyOperation = new MyData();
+            sqls = new SqlServer();
+            dt = new DataTable();
             InitializeComponent();
             ProductPageVM MyVM = new ProductPageVM
             {
                 User_id = user_id
             };
             BindingContext = MyVM;
-
-            ProductList.ItemsSource = GetValues();
-        }
-        
-        
-        public List<Product> GetValues()
-        {
-            List<Product> ProductList = new List<Product>();
-            sqls = new SqlServer();
-            Product p;
-            string Myquery = "SELECT * FROM Products ORDER BY id ASC";
-            dt = sqls.QueryRead(Myquery);
-            foreach (DataRow item in dt.Rows)
-            {
-                p = new Product()
-                {
-                    Id = (int)item["Id"],
-                    Name = (string)item["Name"],
-                    Price = (int)item["Price"]
-                };
-                ProductList.Add(p);
-            }
-            return ProductList;
+            MyUser = MyOperation.GetUser(user_id);
+            ProductList.ItemsSource = MyOperation.GetProductsFromGroupId(MyUser.Group_id);
         }
 
         public class CustomParam
         {
             public Product Parameter { get; set; }
         }
-
         public void Btn_add(object sender, CustomParam e)
         {
             var product = e.Parameter;
-
-            sqls = new SqlServer();
-            
-            string Myquery = "SELECT * FROM Products ORDER BY id ASC";
-            dt = sqls.QueryRead(Myquery);
-
-            DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK"); 
+            MyOperation.AddToCart(MyUser.Id, product.Id);
+            DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK");
         }
 
 
-
+        //DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK");
         private void LoginButton_OnClicked(object sender, EventArgs e)
         {
             var button = (Button)sender;
@@ -86,7 +65,7 @@ namespace LokalaFavoriter
         }
         void Btn_cart(Object sender, System.EventArgs e)
         {
-            var page = new CartPage();
+            var page = new CartPage(MyUser.Id);
             Navigation.PushAsync(page);
         }
         void Btn_profile(Object sender, System.EventArgs e)
@@ -106,6 +85,6 @@ namespace LokalaFavoriter
             base.OnAppearing();
             NavigationPage.SetHasNavigationBar(this, false);
         }
-        
+
     }
 }
