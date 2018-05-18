@@ -30,5 +30,29 @@ namespace SqlServerConnections
             connection.Close();
             return dt;
         }
+
+
+        //public int QueryReturn(string query)
+        //{
+        //    try
+        //    {
+        //        SqlConnection connection = AzureSqlConnection();
+        //        connection.Open();
+        //        SqlCommand command = new SqlCommand(query, connection);
+
+        //        int id = Convert.ToInt32(command.ExecuteScalar());
+
+        //        return id;
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //    finally
+        //    {
+        //        SqlConnection connection = AzureSqlConnection();
+        //        connection.Close();
+        //    }
+        //}
     }
 }

@@ -7,6 +7,6 @@ namespace LokalaFavoriter.ViewModel
 {
     public class CartPageVM
     {
-        public List<Product> Cartlist { get; set; }
+        public int TotalPrice { get; set; }
     }
 }

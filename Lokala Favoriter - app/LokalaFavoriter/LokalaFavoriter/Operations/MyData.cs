@@ -11,6 +11,7 @@ namespace LokalaFavoriter.Operations
     {
         private SqlServer sqls;
         private DataTable dt;
+        private Cart c;
 
         public User GetUser(int id)
         {
@@ -53,25 +54,27 @@ namespace LokalaFavoriter.Operations
             }
             return ProductList;
         }
-        public List<Product> GetCartFromUserId(int user_id)
+
+        public List<Cart> GetCartFromUserId(int user_id)
         {
-            List<Product> ProductList = new List<Product>();
+            List<Cart> CartList = new List<Cart>();
             sqls = new SqlServer();
-            Product p;
-            string Myquery = "SELECT Products.Id, Products.Name, Products.Price, Products.Points FROM ((Cart RIGHT JOIN Users ON Cart.User_id = Users.Id) RIGHT JOIN Products ON Cart.Product_id = Products.Id) WHERE Users.id= '"+user_id+"'";
+            Cart c;
+            string Myquery = "SELECT Cart.Id, Products.Id AS Product_id, Products.Name, Products.Price, Products.Points FROM ((Cart RIGHT JOIN Users ON Cart.User_id = Users.Id) RIGHT JOIN Products ON Cart.Product_id = Products.Id) WHERE Users.id= '" + user_id+"'";
             dt = sqls.QueryRead(Myquery);
             foreach (DataRow item in dt.Rows)
             {
-                p = new Product()
+                c = new Cart()
                 {
                     Id = (int)item["Id"],
+                    Product_id = (int)item["Product_id"],
                     Name = (string)item["Name"],
                     Price = (int)item["Price"],
                     Points = (int)item["Points"]
                 };
-                ProductList.Add(p);
+                CartList.Add(c);
             }
-            return ProductList;
+            return CartList;
         }
 
         public void AddToCart(int user_id, int product_id)
@@ -81,7 +84,48 @@ namespace LokalaFavoriter.Operations
             dt = sqls.QueryRead(Myquery);
         }
 
-       
-        
+        public Cart RemoveFromCart(int cart_id)
+        {
+            sqls = new SqlServer();
+            
+            string Myquery =  "DELETE FROM Cart WHERE Id = '" + cart_id + "'";
+            sqls.QueryRead(Myquery);
+            foreach (DataRow dr in dt.Rows)
+            {
+                c = new Cart()
+                {
+                    Id = (int)dr["Id"],
+                };
+            }
+            return c;
+        }
+
+        public Cart EmptyUserCart(int user_id)
+        {
+            sqls = new SqlServer();
+
+            string Myquery = "DELETE FROM Cart WHERE User_id = '" + user_id + "'";
+            sqls.QueryRead(Myquery);
+            foreach (DataRow dr in dt.Rows)
+            {
+                c = new Cart()
+                {
+                    Id = (int)dr["Id"],
+                };
+            }
+            return c;
+        }
+
+        public int TotalPrice(List<Cart> cart)
+        {
+            int total = 0;
+            foreach (var c in cart)
+            {
+                total = total + c.Price;
+            }
+            return total;
+        }
+
+
     }
 }

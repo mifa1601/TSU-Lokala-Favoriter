@@ -28,21 +28,34 @@
                                         </Grid.ColumnDefinitions>
                                         <Label Grid.Column="0" Text="{Binding Name}" ClassId="Product_id"/>
                                         <Label Grid.Column="0" Text="{Binding Price, StringFormat=\{0\} Kr}" VerticalOptions="CenterAndExpand"/>
-                                        <!--<Image  Source="add.png"
+                                        <Image  Source="Remove.png"
                                         WidthRequest="30"
                                         HeightRequest="30"
                                         HorizontalOptions="EndAndExpand">
                                             <Image.GestureRecognizers>
-                                                <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="Btn_add" />
+                                                <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="Btn_remove" />
                                             </Image.GestureRecognizers>
-                                        </Image>-->
+                                        </Image>
                                     </Grid>
                                 </ViewCell.View>
                             </ViewCell>
                         </DataTemplate>
 
                     </ListView.ItemTemplate>
+                    
                 </ListView>
+                <Label Text="{Binding TotalPrice, StringFormat=\{0\} Kr}" ClassId="Product_id"/>
+                <Button Text="Töm" 
+                        Clicked="Btn_EmptyCart"
+                        BindingContext="CartValue"
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        Margin="1,1,1,1"/>
+
             </StackLayout>
 
             <!--//////////////////////////////////////////////////////////////////////////////////////////////-->

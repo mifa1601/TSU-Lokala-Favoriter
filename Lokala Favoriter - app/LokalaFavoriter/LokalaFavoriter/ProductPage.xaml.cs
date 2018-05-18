@@ -50,11 +50,11 @@ namespace LokalaFavoriter
 
 
         //DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK");
-        private void LoginButton_OnClicked(object sender, EventArgs e)
-        {
-            var button = (Button)sender;
-            var classId = button.ClassId;
-        }
+        //private void LoginButton_OnClicked(object sender, EventArgs e)
+        //{
+        //    var button = (Button)sender;
+        //    var classId = button.ClassId;
+        //}
 
         #region buttons
         void Btn_products(Object sender, System.EventArgs e)
