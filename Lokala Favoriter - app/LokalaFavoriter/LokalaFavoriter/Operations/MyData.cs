@@ -13,6 +13,8 @@ namespace LokalaFavoriter.Operations
         private DataTable dt;
         private Cart c;
 
+#region user
+
         public User GetUser(int id)
         {
             sqls = new SqlServer();
@@ -34,6 +36,11 @@ namespace LokalaFavoriter.Operations
             }
             return null;
         }
+
+#endregion
+
+#region product
+
         public List<Product> GetProductsFromGroupId(int id)
         {
             List<Product> ProductList = new List<Product>();
@@ -54,6 +61,10 @@ namespace LokalaFavoriter.Operations
             }
             return ProductList;
         }
+
+#endregion
+
+#region Cart
 
         public List<Cart> GetCartFromUserId(int user_id)
         {
@@ -126,6 +137,7 @@ namespace LokalaFavoriter.Operations
             return total;
         }
 
+#endregion
 
     }
 }

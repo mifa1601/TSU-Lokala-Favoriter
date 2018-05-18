@@ -43,6 +43,8 @@ namespace LokalaFavoriter
         {
             public Cart Parameter { get; set; }
         }
+
+#region Buttons
         public void Btn_remove(object sender, CustomParam e)
         {
             var Cart = e.Parameter;
@@ -79,7 +81,9 @@ namespace LokalaFavoriter
 
         }
 
-        #region buttons
+        #endregion
+
+#region Navbar
         void Btn_products(Object sender, System.EventArgs e)
         {
             var page = new ProductPage(MyUser.Id);
@@ -100,7 +104,7 @@ namespace LokalaFavoriter
             var page = new ToplistPage();
             Navigation.PushAsync(page);
         }
-        #endregion
+#endregion
 
 
         protected override void OnAppearing()
