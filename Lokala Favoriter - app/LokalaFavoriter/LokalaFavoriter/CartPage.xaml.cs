@@ -87,6 +87,14 @@ namespace LokalaFavoriter
         #endregion
 
 #region Navbar
+
+        void Btn_home(Object sender, System.EventArgs e)
+        {
+            var page = new HomePage(MyUser.Username, MyUser.Id);
+            Navigation.PushAsync(page);
+        }
+
+
         void Btn_products(Object sender, System.EventArgs e)
         {
             var page = new ProductPage(MyUser.Id);

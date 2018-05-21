@@ -30,7 +30,7 @@ namespace LokalaFavoriter
             sqls = new SqlServer();
             dt = new DataTable();
             MyUser = MyOperation.GetUser(user_id);
-            MyGroup = MyOperation.GetGroup(user_id);
+            MyGroup = MyOperation.GetGroup(MyUser.Group_id);
 
             ProfilePageVM MyVm = new ProfilePageVM
             {
