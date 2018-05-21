@@ -20,14 +20,16 @@ namespace LokalaFavoriter
         private SqlServer sqls;
         private MyData MyOperation;
         public User MyUser = new User();
-        
+
 
         public PasswordPage(int user_id)
         {
-            //Btn_SavePassword
             InitializeComponent();
+            MyOperation = new MyData();
+            sqls = new SqlServer();
+            dt = new DataTable();
             MyUser = MyOperation.GetUser(user_id);
-            
+
         }
         private void Btn_SavePassword(object sender, EventArgs e)
         {
@@ -39,44 +41,54 @@ namespace LokalaFavoriter
         public void SaveNewPassword(string oldpassword, string newpassword, string repeatnewpassword)
         {
             sqls = new SqlServer();
-            
+
 
             string query = "UPDATE users SET Password = '" + newpassword + "' WHERE Id = '" + MyUser.Id + "'";
 
             if (oldpassword != MyUser.Password)
             {
                 DisplayAlert("Misslyckades", "Det gamla lösenordet stämmer inte", "Stäng");
-                //oldpassword.Text = String.Empty;
+                OldPassword.Text = String.Empty;
+
 
             }
             else if (newpassword != repeatnewpassword)
             {
                 DisplayAlert("Misslyckades", "De nya lösenordet du upprepade stämmer inte", "Stäng");
-                //newpassword.Text = String.Empty;
-                //repeatnewpassword.Text = String.Empty;
+                NewPassword.Text = String.Empty;
+                RepeatNewPassword.Text = String.Empty;
             }
             else
             {
+                DisplayAlert("Lyckades!", "Ditt lösenord är nu bytt till " + newpassword, "Stäng");
+                ProfilePage page = new ProfilePage(MyUser.Id);
+                Navigation.PushAsync(page);
+
                 dt = sqls.QueryRead(query);
                 if (dt.Rows.Count == 1)
                 {
                     foreach (DataRow item in dt.Rows)
                     {
+
                         MyUser = new User()
                         {
                             Id = (int)item["Id"],
-                            
+
                         };
 
                     }
-                    DisplayAlert("Lyckades!", "Ditt lösenord är nu bytt till " + newpassword, "Stäng");
-                    ProfilePage page = new ProfilePage(MyUser.Id);
-                    Navigation.PushAsync(page);
+
                 }
+
             }
 
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
         #region buttons
         void Btn_home(Object sender, System.EventArgs e)
         {
@@ -106,5 +118,6 @@ namespace LokalaFavoriter
         }
         #endregion
     }
+
 
 }

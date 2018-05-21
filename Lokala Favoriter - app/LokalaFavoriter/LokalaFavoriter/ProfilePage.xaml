@@ -6,30 +6,59 @@
              xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel; assembly=LokalaFavoriter">
     <ContentPage.Content>
 
-        <Grid Margin="0,0,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="10*"/>
-            </Grid.RowDefinitions>
+        <StackLayout VerticalOptions="Start" BackgroundColor="Black">
 
-            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+            <Grid Margin="0,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
 
-            <StackLayout Grid.Row="1">
-                <Label Text="Användarnamn:" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Label Text="{Binding Username}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Label Text="Lösenord:" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Label Text="{Binding Points}" VerticalOptions="Center" HorizontalOptions="Center" />
-                <Label Text="Grupp:" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Label Text="{Binding Groupname}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Button Text="Ändra lösenord" Clicked="Btn_Passwordpage" />
-            </StackLayout>
 
-            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+                <BoxView Grid.Row="1" BackgroundColor="Black" WidthRequest="400" HeightRequest="40" VerticalOptions="StartAndExpand" Margin="0,0,0,0"/>
+                <Image Source="logotest.png"
+                       WidthRequest="100"
+                       HeightRequest="60"
+                       HorizontalOptions="EndAndExpand"
+                       Grid.Row="1"
+                       Margin="0,0,0,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Btn_home" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <StackLayout Grid.Row="1"  Orientation="Vertical">
 
-            <BoxView Grid.Row="2" BackgroundColor="Black" WidthRequest="400"></BoxView>
-            <StackLayout Grid.Row="2" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Användare:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"/>
+                        <Label Text="{Binding Username}" TextColor="White" Margin="10,0,0,0"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Poäng:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"/>
+                        <Label Text="{Binding Points}" TextColor="White" Margin="10,0,0,0"/>
+                    </StackLayout>
 
-                <Button Text="Kundvagn" 
+                </StackLayout>
+                <BoxView Grid.Row="2" BackgroundColor="LightSteelBlue" WidthRequest="400" VerticalOptions="LayoutOptions.Fill" Margin="0,0,0,0"/>
+
+                <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                <StackLayout Grid.Row="2">
+                    <Label Text="Användarnamn:" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Text="{Binding Username}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Text="Poäng:" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Text="{Binding Points}" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Label Text="Grupp:" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Text="{Binding Groupname}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Button Text="Ändra lösenord" Clicked="Btn_Passwordpage" />
+                </StackLayout>
+
+                <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                <BoxView Grid.Row="3" BackgroundColor="Black" WidthRequest="400"></BoxView>
+                <StackLayout Grid.Row="3" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+
+                    <Button Text="Kundvagn" 
                         Clicked="Btn_cart"
                         BindingContext="CartValue"
                         BackgroundColor="GhostWhite" 
@@ -40,7 +69,7 @@
                         HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-                <Button Text="Produkter"
+                    <Button Text="Produkter"
                         Clicked="Btn_products"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
@@ -50,7 +79,7 @@
                         HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-                <Button Text="Topplista" 
+                    <Button Text="Topplista" 
                         Clicked="Btn_toplist"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
@@ -60,7 +89,7 @@
                         HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-                <Button Text="Profil"
+                    <Button Text="Profil"
                         Clicked="Btn_profile"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
@@ -70,9 +99,10 @@
                         HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-            </StackLayout>
+                </StackLayout>
 
-        </Grid>
+            </Grid>
+        </StackLayout>
 
     </ContentPage.Content>
 </ContentPage>

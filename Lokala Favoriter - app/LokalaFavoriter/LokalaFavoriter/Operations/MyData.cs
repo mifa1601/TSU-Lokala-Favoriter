@@ -29,6 +29,7 @@ namespace LokalaFavoriter.Operations
                     {
                         Id = (int)item["Id"],
                         Username = (string)item["Username"],
+                        Password = (string)item["Password"],
                         Group_id = (int)item["Group_id"],
                         Points = (int)item["Points"]
                     };

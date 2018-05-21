@@ -67,6 +67,11 @@ namespace LokalaFavoriter
             var page = new PasswordPage(MyUser.Id);
             Navigation.PushAsync(page);
         }
+        void Btn_home(Object sender, System.EventArgs e)
+        {
+            var page = new HomePage(MyUser.Username, MyUser.Id);
+            Navigation.PushAsync(page);
+        }
         #endregion
 
         protected override void OnAppearing()
