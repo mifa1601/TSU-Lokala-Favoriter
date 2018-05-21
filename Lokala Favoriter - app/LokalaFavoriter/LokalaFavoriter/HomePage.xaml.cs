@@ -51,7 +51,7 @@ namespace LokalaFavoriter
         }
         void Btn_profile(Object sender, System.EventArgs e)
         {
-            var page = new ProfilePage();
+            var page = new ProfilePage(MyUser.Id);
             Navigation.PushAsync(page);
         }
         void Btn_toplist(Object sender, System.EventArgs e)

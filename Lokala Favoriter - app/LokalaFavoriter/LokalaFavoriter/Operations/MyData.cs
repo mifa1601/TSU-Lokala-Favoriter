@@ -36,10 +36,30 @@ namespace LokalaFavoriter.Operations
             }
             return null;
         }
+        public Groups GetGroup(int id)
+        {
+            sqls = new SqlServer();
+            Groups MyGroup;
+            string query = "SELECT * FROM groups WHERE Id = '" + id + "'";
+            dt = sqls.QueryRead(query);
+            if (dt.Rows.Count == 1)
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    MyGroup = new Groups()
+                    {
+                        Id = (int)item["Id"],
+                        Groupname = (string)item["Groupname"]
+                    };
+                    return MyGroup;
+                }
+            }
+            return null;
+        }
 
-#endregion
+        #endregion
 
-#region product
+        #region product
 
         public List<Product> GetProductsFromGroupId(int id)
         {

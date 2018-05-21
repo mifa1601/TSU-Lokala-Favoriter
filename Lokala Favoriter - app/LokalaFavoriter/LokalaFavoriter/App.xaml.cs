@@ -31,11 +31,11 @@ namespace LokalaFavoriter
         //    var page = new CartPage();
         //    MainPage.Navigation.PushAsync(page);
         //}
-        void Btn_profile(Object sender, System.EventArgs e)
-        {
-            var page = new ProfilePage();
-            MainPage.Navigation.PushAsync(page);
-        }
+        //void Btn_profile(Object sender, System.EventArgs e)
+        //{
+        //    var page = new ProfilePage();
+        //    MainPage.Navigation.PushAsync(page);
+        //}
         void Btn_toplist(Object sender, System.EventArgs e)
         {
             var page = new ToplistPage();
