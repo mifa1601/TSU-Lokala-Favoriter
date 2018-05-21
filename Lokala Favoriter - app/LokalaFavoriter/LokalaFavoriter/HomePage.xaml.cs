@@ -28,13 +28,15 @@ namespace LokalaFavoriter
             sqls = new SqlServer();
             dt = new DataTable();
             InitializeComponent();
+            MyUser = MyOp.GetUser(user_id);
             HomePageVM MyVM = new HomePageVM
             {
                 LoggedInUser = Username,
-                User_id = user_id
+                User_id = user_id,
+                Points = MyUser.Points
             };
             BindingContext = MyVM;
-            MyUser = MyOp.GetUser(user_id);
+            
         }
 
 #region Navbar

@@ -34,7 +34,8 @@ namespace LokalaFavoriter
             CartPageVM CartVM = new CartPageVM
             {
                 TotalPrice = TotalPrice,
-                LoggedInUser = MyUser.Username
+                LoggedInUser = MyUser.Username,
+                UserPoints = MyUser.Points
             };
             BindingContext = CartVM;
 

@@ -9,6 +9,7 @@ namespace LokalaFavoriter.ViewModel
         public string LoggedInUser { get; set; }
         public int Group_id { get; set; }
         public int User_id { get; set; }
+        public int Points { get; set; }
 
     }
 }
