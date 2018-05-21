@@ -28,20 +28,62 @@ namespace LokalaFavoriter
             MyOperation = new MyData();
             sqls = new SqlServer();
             dt = new DataTable();
+            CartList.ItemsSource = MyOperation.GetCartFromUserId(user_id);
+            int TotalPrice = MyOperation.TotalPrice(MyOperation.GetCartFromUserId(user_id));
             CartPageVM CartVM = new CartPageVM
             {
-                
+                TotalPrice = TotalPrice
             };
             BindingContext = CartVM;
-            CartList.ItemsSource = MyOperation.GetCartFromUserId(user_id);
+
             MyUser = MyOperation.GetUser(user_id);
         }
 
         public class CustomParam
         {
-            public Product Parameter { get; set; }
+            public Cart Parameter { get; set; }
         }
-        #region buttons
+
+#region Buttons
+        public void Btn_remove(object sender, CustomParam e)
+        {
+            var Cart = e.Parameter;
+            MyOperation.RemoveFromCart(Cart.Id);
+           
+
+            DisplayAlert("Kundvagn", "Du har tagit bort " + Cart.Name + " Från kundvagnen", "OK");
+
+            CartList.ItemsSource = MyOperation.GetCartFromUserId(MyUser.Id);
+            int TotalPrice = MyOperation.TotalPrice(MyOperation.GetCartFromUserId(MyUser.Id));
+            CartPageVM CartVM = new CartPageVM
+            {
+                TotalPrice = TotalPrice
+            };
+            BindingContext = CartVM;
+
+        }
+
+        public void Btn_EmptyCart(object sender, CustomParam e)
+        {
+            
+            MyOperation.EmptyUserCart(MyUser.Id);
+            
+
+            DisplayAlert("Kundvagn", "Du har tömt kundvagnen", "OK");
+
+            CartList.ItemsSource = MyOperation.GetCartFromUserId(MyUser.Id);
+            int TotalPrice = MyOperation.TotalPrice(MyOperation.GetCartFromUserId(MyUser.Id));
+            CartPageVM CartVM = new CartPageVM
+            {
+                TotalPrice = TotalPrice
+            };
+            BindingContext = CartVM;
+
+        }
+
+        #endregion
+
+#region Navbar
         void Btn_products(Object sender, System.EventArgs e)
         {
             var page = new ProductPage(MyUser.Id);
@@ -62,7 +104,7 @@ namespace LokalaFavoriter
             var page = new ToplistPage();
             Navigation.PushAsync(page);
         }
-        #endregion
+#endregion
 
 
         protected override void OnAppearing()

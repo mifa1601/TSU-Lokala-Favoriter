@@ -37,7 +37,8 @@ namespace LokalaFavoriter
             MyUser = MyOp.GetUser(user_id);
         }
         
-        #region buttons
+#region Navbar
+
         void Btn_products(Object sender, System.EventArgs e)
         {
             var page = new ProductPage(MyUser.Id);
@@ -58,7 +59,9 @@ namespace LokalaFavoriter
             var page = new ToplistPage();
             Navigation.PushAsync(page);
         }
-        #endregion
+
+#endregion
+
         protected override void OnAppearing()
         {
             base.OnAppearing();

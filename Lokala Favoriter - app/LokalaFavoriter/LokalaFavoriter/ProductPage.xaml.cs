@@ -41,22 +41,19 @@ namespace LokalaFavoriter
         {
             public Product Parameter { get; set; }
         }
+
+#region Buttons
         public void Btn_add(object sender, CustomParam e)
         {
             var product = e.Parameter;
             MyOperation.AddToCart(MyUser.Id, product.Id);
             DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK");
         }
+#endregion
 
 
-        //DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK");
-        private void LoginButton_OnClicked(object sender, EventArgs e)
-        {
-            var button = (Button)sender;
-            var classId = button.ClassId;
-        }
+#region Navbar
 
-        #region buttons
         void Btn_products(Object sender, System.EventArgs e)
         {
             int id = Convert.ToInt32(Testknapp.Text);
@@ -78,7 +75,8 @@ namespace LokalaFavoriter
             var page = new ToplistPage();
             Navigation.PushAsync(page);
         }
-        #endregion
+
+#endregion
 
         protected override void OnAppearing()
         {
