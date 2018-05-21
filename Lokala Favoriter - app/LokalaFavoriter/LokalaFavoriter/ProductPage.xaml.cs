@@ -32,7 +32,8 @@ namespace LokalaFavoriter
             ProductPageVM MyVM = new ProductPageVM
             {
                 User_id = user_id,
-                LoggedInUser = MyUser.Username
+                LoggedInUser = MyUser.Username,
+                UserPoints = MyUser.Points
             };
             BindingContext = MyVM;
             

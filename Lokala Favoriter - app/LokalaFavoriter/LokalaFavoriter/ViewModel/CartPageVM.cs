@@ -9,5 +9,6 @@ namespace LokalaFavoriter.ViewModel
     {
         public int TotalPrice { get; set; }
         public string LoggedInUser { get; set; }
+        public int UserPoints { get; set; }
     }
 }

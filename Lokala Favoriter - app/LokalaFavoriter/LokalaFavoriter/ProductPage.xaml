@@ -16,20 +16,30 @@
                 </Grid.RowDefinitions>
 
 
-                <BoxView Grid.Row="1" BackgroundColor="Black" WidthRequest="400" HeightRequest="40" VerticalOptions="StartAndExpand" Margin="0,0,0,0"></BoxView>
-                <StackLayout Grid.Row="1"  Orientation="Horizontal">
-                    <Label Text="Användare:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"></Label>
-                    <Label Text="{Binding LoggedInUser}" TextColor="White" Margin="10,0,0,0"/>
-                    <Image  Source="logotest.png"
-                                        WidthRequest="100"
-                                        HeightRequest="60"
-                                        HorizontalOptions="EndAndExpand">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Btn_home" />
-                        </Image.GestureRecognizers>
-                    </Image>
+                <BoxView Grid.Row="1" BackgroundColor="Black" WidthRequest="400" HeightRequest="40" VerticalOptions="StartAndExpand" Margin="0,0,0,0"/>
+                <Image Source="logotest.png"
+                       WidthRequest="100"
+                       HeightRequest="60"
+                       HorizontalOptions="EndAndExpand"
+                       Grid.Row="1"
+                       Margin="0,0,0,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Btn_home" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <StackLayout Grid.Row="1"  Orientation="Vertical">
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Användare:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"/>
+                        <Label Text="{Binding LoggedInUser}" TextColor="White" Margin="10,0,0,0"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Poäng:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"/>
+                        <Label Text="{Binding UserPoints}" TextColor="White" Margin="10,0,0,0"/>
+                    </StackLayout>
+
                 </StackLayout>
-                <BoxView Grid.Row="2" BackgroundColor="LightSteelBlue" WidthRequest="400" VerticalOptions="LayoutOptions.Fill" Margin="0,0,0,0"></BoxView>
+                <BoxView Grid.Row="2" BackgroundColor="LightSteelBlue" WidthRequest="400" VerticalOptions="LayoutOptions.Fill" Margin="0,0,0,0"/>
 
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
 
