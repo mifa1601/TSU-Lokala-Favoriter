@@ -8,5 +8,6 @@ namespace LokalaFavoriter.ViewModel
     public class CartPageVM
     {
         public int TotalPrice { get; set; }
+        public string LoggedInUser { get; set; }
     }
 }

@@ -7,45 +7,56 @@
 
     <ContentPage.Content>
 
-        <Grid Margin="0,0,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="10*"/>
-            </Grid.RowDefinitions>
+        <StackLayout VerticalOptions="Start" BackgroundColor="Black">
 
-            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+            <Grid Margin="0,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
 
-            <StackLayout Grid.Row="1">
-                <ListView x:Name="CartList">
-                    <ListView.ItemTemplate>
 
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.View>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="1*" />
-                                        </Grid.ColumnDefinitions>
-                                        <Label Grid.Column="0" Text="{Binding Name}" ClassId="Product_id"/>
-                                        <Label Grid.Column="0" Text="{Binding Price, StringFormat=\{0\} Kr}" VerticalOptions="CenterAndExpand"/>
-                                        <Image  Source="Remove.png"
+                <BoxView Grid.Row="1" BackgroundColor="Black" WidthRequest="400" HeightRequest="40" VerticalOptions="StartAndExpand" Margin="0,0,0,0"></BoxView>
+                <StackLayout Grid.Row="1"  Orientation="Horizontal">
+                    <Label Text="Användare:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"></Label>
+                    <Label Text="{Binding LoggedInUser}" TextColor="White" Margin="10,0,0,0"/>
+                </StackLayout>
+                <BoxView Grid.Row="2" BackgroundColor="LightSteelBlue" WidthRequest="400" VerticalOptions="LayoutOptions.Fill" Margin="0,0,0,0"></BoxView>
+
+                <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                <StackLayout Grid.Row="2">
+                    <ListView x:Name="CartList">
+                        <ListView.ItemTemplate>
+
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0" Text="{Binding Name}" ClassId="Product_id"/>
+                                            <Label Grid.Column="0" Text="{Binding Price, StringFormat=\{0\} Kr}" VerticalOptions="CenterAndExpand"/>
+                                            <Image  Source="Remove.png"
                                         WidthRequest="30"
                                         HeightRequest="30"
                                         HorizontalOptions="EndAndExpand">
-                                            <Image.GestureRecognizers>
-                                                <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="Btn_remove" />
-                                            </Image.GestureRecognizers>
-                                        </Image>
-                                    </Grid>
-                                </ViewCell.View>
-                            </ViewCell>
-                        </DataTemplate>
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="Btn_remove" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
 
-                    </ListView.ItemTemplate>
-                    
-                </ListView>
-                <Label Text="{Binding TotalPrice, StringFormat=\{0\} Kr}" ClassId="Product_id"/>
-                <Button Text="Töm" 
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+                    <Label Text="{Binding TotalPrice, StringFormat=\{0\} Kr}" ClassId="Product_id"/>
+                    <Button Text="Töm" 
                         Clicked="Btn_EmptyCart"
                         BindingContext="CartValue"
                         BackgroundColor="GhostWhite" 
@@ -56,14 +67,14 @@
                         HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-            </StackLayout>
+                </StackLayout>
 
-            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+                <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
 
-            <BoxView Grid.Row="2" BackgroundColor="Black" WidthRequest="400"></BoxView>
-            <StackLayout Grid.Row="2" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+                <BoxView Grid.Row="3" BackgroundColor="Black" WidthRequest="400"></BoxView>
+                <StackLayout Grid.Row="3" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
 
-                <Button Text="Kundvagn" 
+                    <Button Text="Kundvagn" 
                         Clicked="Btn_cart"
                         BindingContext="CartValue"
                         BackgroundColor="GhostWhite" 
@@ -74,7 +85,7 @@
                         HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-                <Button Text="Produkter"
+                    <Button Text="Produkter"
                         Clicked="Btn_products"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
@@ -84,7 +95,7 @@
                         HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-                <Button Text="Topplista" 
+                    <Button Text="Topplista" 
                         Clicked="Btn_toplist"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
@@ -94,7 +105,7 @@
                         HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-                <Button Text="Profil"
+                    <Button Text="Profil"
                         Clicked="Btn_profile"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
@@ -104,13 +115,13 @@
                         HeightRequest="80"
                         Margin="1,1,1,1"/>
 
-            </StackLayout>
+                </StackLayout>
 
-        </Grid>
-
-
+            </Grid>
 
 
+
+        </StackLayout>
 
 
 

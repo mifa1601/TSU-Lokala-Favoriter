@@ -7,73 +7,81 @@
 
     <ContentPage.Content>
 
-
-        <Grid Margin="0,0,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="10*"/>
-            </Grid.RowDefinitions>
-
-
-
-            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
-
-            <StackLayout Grid.Row="1" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
-                <Label x:Name="username" Text="{Binding LoggedInUser}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
-                <Label Text="{Binding User_id}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
-            </StackLayout>
-
-            <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
-
-            <BoxView Grid.Row="2" BackgroundColor="Black" WidthRequest="400"></BoxView>
-            <StackLayout Grid.Row="2" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
-
-                <Button Text="Kundvagn" 
-                        Clicked="Btn_cart"
-                        BindingContext="CartValue"
-                        BackgroundColor="GhostWhite" 
-                        TextColor="Black"
-                        FontSize="10"
-                        HorizontalOptions="Center"
-                        WidthRequest="80"
-                        HeightRequest="80"
-                        Margin="1,1,1,1"/>
-
-                <Button Text="Produkter"
-                        Clicked="Btn_products"
-                        BackgroundColor="GhostWhite" 
-                        TextColor="Black"
-                        FontSize="10"
-                        HorizontalOptions="Center"
-                        WidthRequest="80"
-                        HeightRequest="80"
-                        Margin="1,1,1,1"/>
-
-                <Button Text="Topplista" 
-                        Clicked="Btn_toplist"
-                        BackgroundColor="GhostWhite" 
-                        TextColor="Black"
-                        FontSize="10"
-                        HorizontalOptions="Center"
-                        WidthRequest="80"
-                        HeightRequest="80"
-                        Margin="1,1,1,1"/>
-
-                <Button Text="Profil"
-                        Clicked="Btn_profile"
-                        BackgroundColor="GhostWhite" 
-                        TextColor="Black"
-                        FontSize="10"
-                        HorizontalOptions="Center"
-                        WidthRequest="80"
-                        HeightRequest="80"
-                        Margin="1,1,1,1"/>
-
-            </StackLayout>
-
-        </Grid>
+        <StackLayout VerticalOptions="Start" BackgroundColor="Black">
+            
+            <Grid Margin="0,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
 
 
+                <BoxView Grid.Row="1" BackgroundColor="Black" WidthRequest="400" HeightRequest="40" VerticalOptions="StartAndExpand" Margin="0,0,0,0"></BoxView>
+                <StackLayout Grid.Row="1"  Orientation="Horizontal">
+                    <Label Text="Användare:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"></Label>
+                    <Label Text="{Binding LoggedInUser}" TextColor="White" Margin="10,0,0,0"/>
+                </StackLayout>
+                <BoxView Grid.Row="2" BackgroundColor="LightSteelBlue" WidthRequest="400" VerticalOptions="LayoutOptions.Fill" Margin="0,0,0,0"></BoxView>
+            
+                <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                <StackLayout Grid.Row="2" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="LightSteelBlue">
+                    <Label x:Name="username" Text="{Binding LoggedInUser}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+                    <Label Text="{Binding User_id}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
+                </StackLayout>
+
+                <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                <BoxView Grid.Row="3" BackgroundColor="Black" WidthRequest="400"></BoxView>
+                <StackLayout Grid.Row="3" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
+
+                    <Button Text="Kundvagn" 
+                            Clicked="Btn_cart"
+                            BindingContext="CartValue"
+                            BackgroundColor="GhostWhite" 
+                            TextColor="Black"
+                            FontSize="10"
+                            HorizontalOptions="Center"
+                            WidthRequest="80"
+                            HeightRequest="80"
+                            Margin="1,1,1,1"/>
+
+                    <Button Text="Produkter"
+                            Clicked="Btn_products"
+                            BackgroundColor="GhostWhite" 
+                            TextColor="Black"
+                            FontSize="10"
+                            HorizontalOptions="Center"
+                            WidthRequest="80"
+                            HeightRequest="80"
+                            Margin="1,1,1,1"/>
+
+                    <Button Text="Topplista" 
+                            Clicked="Btn_toplist"
+                            BackgroundColor="GhostWhite" 
+                            TextColor="Black"
+                            FontSize="10"
+                            HorizontalOptions="Center"
+                            WidthRequest="80"
+                            HeightRequest="80"
+                            Margin="1,1,1,1"/>
+
+                    <Button Text="Profil"
+                            Clicked="Btn_profile"
+                            BackgroundColor="GhostWhite" 
+                            TextColor="Black"
+                            FontSize="10"
+                            HorizontalOptions="Center"
+                            WidthRequest="80"
+                            HeightRequest="80"
+                            Margin="1,1,1,1"/>
+
+                </StackLayout>
+
+            </Grid>
+
+        </StackLayout>
 
 
 

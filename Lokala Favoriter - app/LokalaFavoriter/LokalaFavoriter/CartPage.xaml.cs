@@ -30,13 +30,16 @@ namespace LokalaFavoriter
             dt = new DataTable();
             CartList.ItemsSource = MyOperation.GetCartFromUserId(user_id);
             int TotalPrice = MyOperation.TotalPrice(MyOperation.GetCartFromUserId(user_id));
+            MyUser = MyOperation.GetUser(user_id);
             CartPageVM CartVM = new CartPageVM
             {
-                TotalPrice = TotalPrice
+                TotalPrice = TotalPrice,
+                LoggedInUser = MyUser.Username
             };
             BindingContext = CartVM;
 
-            MyUser = MyOperation.GetUser(user_id);
+            
+            
         }
 
         public class CustomParam

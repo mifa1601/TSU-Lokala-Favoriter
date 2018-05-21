@@ -28,12 +28,14 @@ namespace LokalaFavoriter
             sqls = new SqlServer();
             dt = new DataTable();
             InitializeComponent();
+            MyUser = MyOperation.GetUser(user_id);
             ProductPageVM MyVM = new ProductPageVM
             {
-                User_id = user_id
+                User_id = user_id,
+                LoggedInUser = MyUser.Username
             };
             BindingContext = MyVM;
-            MyUser = MyOperation.GetUser(user_id);
+            
             ProductList.ItemsSource = MyOperation.GetProductsFromGroupId(MyUser.Group_id);
         }
 
@@ -56,8 +58,7 @@ namespace LokalaFavoriter
 
         void Btn_products(Object sender, System.EventArgs e)
         {
-            int id = Convert.ToInt32(Testknapp.Text);
-            var page = new ProductPage(id);
+            var page = new ProductPage(MyUser.Id);
             Navigation.PushAsync(page);
         }
         void Btn_cart(Object sender, System.EventArgs e)
