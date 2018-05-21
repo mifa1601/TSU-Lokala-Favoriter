@@ -59,7 +59,7 @@ namespace LokalaFavoriter.Operations
 
         #endregion
 
-        #region product
+#region product
 
         public List<Product> GetProductsFromGroupId(int id)
         {

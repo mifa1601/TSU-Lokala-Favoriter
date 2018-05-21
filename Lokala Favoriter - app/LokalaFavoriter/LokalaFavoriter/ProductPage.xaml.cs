@@ -45,16 +45,23 @@ namespace LokalaFavoriter
         }
 
 #region Buttons
+
         public void Btn_add(object sender, CustomParam e)
         {
             var product = e.Parameter;
             MyOperation.AddToCart(MyUser.Id, product.Id);
             DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK");
         }
-#endregion
+        #endregion
 
 
 #region Navbar
+
+        void Btn_home(Object sender, System.EventArgs e)
+        {
+            var page = new HomePage(MyUser.Username, MyUser.Id);
+            Navigation.PushAsync(page);
+        }
 
         void Btn_products(Object sender, System.EventArgs e)
         {
