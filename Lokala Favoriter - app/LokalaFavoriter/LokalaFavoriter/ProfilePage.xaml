@@ -21,6 +21,7 @@
                 <Label Text="{Binding Points}" VerticalOptions="Center" HorizontalOptions="Center" />
                 <Label Text="Grupp:" VerticalOptions="Center" HorizontalOptions="Center"/>
                 <Label Text="{Binding Groupname}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Button Text="Ändra lösenord" />
             </StackLayout>
 
             <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
