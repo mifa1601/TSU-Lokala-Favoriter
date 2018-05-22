@@ -1,5 +1,6 @@
 ﻿using LokalaFavoriter.Model;
 using LokalaFavoriter.Operations;
+using LokalaFavoriter.ViewModel;
 using SqlServerConnections;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,14 @@ namespace LokalaFavoriter
             sqls = new SqlServer();
             dt = new DataTable();
             MyUser = MyOperation.GetUser(user_id);
+
+            ProfilePageVM MyVm = new ProfilePageVM
+            {
+                Username = MyUser.Username,
+                Password = MyUser.Password,
+                Points = MyUser.Points,
+            };
+            BindingContext = MyVm;
 
         }
         private void Btn_SavePassword(object sender, EventArgs e)
