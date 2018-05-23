@@ -66,8 +66,23 @@ namespace LokalaFavoriter
             var page = new ToplistPage(MyUser.Id);
             Navigation.PushAsync(page);
         }
+        async void Btn_logout(Object sender, System.EventArgs e)
+        {
+            var Logout = await DisplayAlert("Logga ut", "Är du säker att du vill logga ut?", "Ja","Nej");
+            var page = new Login();
+            if (Logout.Equals(true))
+            {
+                await Navigation.PushAsync(page);
+            }
+            else
+            {
+                Logout = false;
+            }
+            
+        }
 
-#endregion
+
+        #endregion
 
         protected override void OnAppearing()
         {
