@@ -17,17 +17,10 @@
                 </Grid.RowDefinitions>
 
 
-                <BoxView Grid.Row="1" BackgroundColor="Black" WidthRequest="400" HeightRequest="40" VerticalOptions="StartAndExpand" Margin="0,0,0,0"/>
-                <Image Source="logotest.png"
-                       WidthRequest="100"
-                       HeightRequest="60"
-                       HorizontalOptions="EndAndExpand"
-                       Grid.Row="1"
-                       Margin="0,0,0,0">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Btn_home" />
-                    </Image.GestureRecognizers>
-                </Image>
+                <BoxView Grid.Row="1" BackgroundColor="Black" WidthRequest="400" HeightRequest="60" VerticalOptions="StartAndExpand" Margin="0,0,0,0"/>
+
+
+
                 <StackLayout Grid.Row="1"  Orientation="Vertical">
 
                     <StackLayout Orientation="Horizontal">
@@ -40,6 +33,22 @@
                     </StackLayout>
 
                 </StackLayout>
+                
+                <StackLayout Grid.Row="1" Orientation="Vertical" HeightRequest="60" WidthRequest="100" HorizontalOptions="End">
+
+                    <Image Source="logotest.png"
+                       WidthRequest="100"
+                       HeightRequest="60"
+                       HorizontalOptions="EndAndExpand"
+                       Grid.Row="1"
+                       Margin="0,0,0,0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Btn_home" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                </StackLayout>
+                
                 <BoxView Grid.Row="2" BackgroundColor="LightSteelBlue" WidthRequest="400" VerticalOptions="LayoutOptions.Fill" Margin="0,0,0,0"/>
 
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
