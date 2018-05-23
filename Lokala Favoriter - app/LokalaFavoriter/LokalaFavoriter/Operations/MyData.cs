@@ -116,23 +116,22 @@ namespace LokalaFavoriter.Operations
 
 #region Toplist
 
-        public List<User> GetTopList()
+        public List<Point> GetTopList()
         {
-            List<User> Toplist = new List<User>();
+            List<Point> Toplist = new List<Point>();
             sqls = new SqlServer();
-            User u;
+            Point p;
             
-            string Myquery = "SELECT TOP 5 * FROM Users ORDER BY Points desc";
+            string Myquery = "SELECT top 5 sum(Points.Points) as points, Users.Username From Points left join Users on Points.User_id = Users.Id group by Users.Username ORDER BY Points DESC";
             dt = sqls.QueryRead(Myquery);
             foreach (DataRow item in dt.Rows)
             {
-                u = new User()
+                p = new Point()
                 {
-                    Id = (int)item["Id"],
+                    Points = (int)item["Points"],
                     Username = (string)item["Username"],
-                    
                 };
-                Toplist.Add(u);
+                Toplist.Add(p);
             }
             return Toplist;
         }
