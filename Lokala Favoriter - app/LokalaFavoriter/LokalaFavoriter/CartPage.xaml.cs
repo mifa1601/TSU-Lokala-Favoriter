@@ -35,7 +35,7 @@ namespace LokalaFavoriter
             {
                 TotalPrice = TotalPrice,
                 LoggedInUser = MyUser.Username,
-                UserPoints = MyUser.Points
+                UserPoints = MyOperation.GetTotalPoints(MyUser.Id),
             };
             BindingContext = CartVM;
 

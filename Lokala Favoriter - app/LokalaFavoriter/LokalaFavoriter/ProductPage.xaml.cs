@@ -33,7 +33,7 @@ namespace LokalaFavoriter
             {
                 User_id = user_id,
                 LoggedInUser = MyUser.Username,
-                UserPoints = MyUser.Points
+                UserPoints = MyOperation.GetTotalPoints(MyUser.Id),
             };
             BindingContext = MyVM;
             

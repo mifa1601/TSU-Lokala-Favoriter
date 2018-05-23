@@ -31,7 +31,7 @@ namespace LokalaFavoriter.Operations
                         Username = (string)item["Username"],
                         Password = (string)item["Password"],
                         Group_id = (int)item["Group_id"],
-                        Points = (int)item["Points"]
+                        
                     };
                     return MyUser;
                 };
@@ -58,6 +58,59 @@ namespace LokalaFavoriter.Operations
             }
             return null;
         }
+        public int GetPoints(int user_id, DateTime MyStartTime, DateTime MyEndTime)
+        {
+            sqls = new SqlServer();
+            Point MyPoint;
+            int Points = 0;
+            string query = "SELECT * FROM Points WHERE User_id = '"+user_id+ "' AND Date between '" + MyStartTime + "' and '" + MyEndTime + "'";
+            dt = sqls.QueryRead(query);
+           
+                foreach (DataRow item in dt.Rows)
+                {
+                    MyPoint = new Point()
+                    {
+                        Id = (int)item["Id"],
+                        User_id = (int)item["User_id"],
+                        Points = (int)item["Points"],
+                        Date = (DateTime)item["Date"]
+                    };
+                Points = Points + MyPoint.Points;
+                };
+            
+
+            return Points;
+        }
+        public int GetTotalPoints(int user_id)
+        {
+            sqls = new SqlServer();
+            Point MyPoint;
+            int Points = 0;
+            string query = "SELECT * FROM Points WHERE User_id = '" + user_id + "'";
+            dt = sqls.QueryRead(query);
+
+            foreach (DataRow item in dt.Rows)
+            {
+                MyPoint = new Point()
+                {
+                    Id = (int)item["Id"],
+                    User_id = (int)item["User_id"],
+                    Points = (int)item["Points"],
+                };
+                Points = Points + MyPoint.Points;
+            };
+
+
+            return Points;
+        }
+        public string GetMonthName(int monthNumber)
+        {
+            List<string> Months = new List<string>
+            {
+                "Januari","Februari","Mars","April","Maj","Juni","Juli","Augusti","September","Oktober","November","December"
+            };
+            return Months[monthNumber -1];
+        }
 
         #endregion
 
@@ -77,7 +130,7 @@ namespace LokalaFavoriter.Operations
                 {
                     Id = (int)item["Id"],
                     Username = (string)item["Username"],
-                    Points = (int)item["Points"]
+                    
                 };
                 Toplist.Add(u);
             }

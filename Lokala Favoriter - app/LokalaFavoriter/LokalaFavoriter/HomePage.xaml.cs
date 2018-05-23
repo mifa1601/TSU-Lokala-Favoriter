@@ -19,21 +19,21 @@ namespace LokalaFavoriter
     {
         private SqlServer sqls;
         private DataTable dt;
-        private MyData MyOp;
+        private MyData MyOperation;
         public User MyUser = new User();
 
         public HomePage(string Username, int user_id)
         {
-            MyOp = new MyData();
+            MyOperation = new MyData();
             sqls = new SqlServer();
             dt = new DataTable();
             InitializeComponent();
-            MyUser = MyOp.GetUser(user_id);
+            MyUser = MyOperation.GetUser(user_id);
             HomePageVM MyVM = new HomePageVM
             {
                 LoggedInUser = Username,
                 User_id = user_id,
-                Points = MyUser.Points
+                Points = MyOperation.GetTotalPoints(MyUser.Id),
             };
             BindingContext = MyVM;
             

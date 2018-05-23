@@ -32,15 +32,34 @@ namespace LokalaFavoriter
             MyUser = MyOperation.GetUser(user_id);
             MyGroup = MyOperation.GetGroup(MyUser.Group_id);
 
+            DateTime now = DateTime.Now;
+            var startDate = new DateTime(now.Year, now.Month, 1);
+            var endDate = startDate.AddMonths(1).AddDays(-1);
+            
+            var culture = System.Threading.Thread.CurrentThread.CurrentCulture;
+            var diff = now.DayOfWeek - culture.DateTimeFormat.FirstDayOfWeek;
+            if (diff < 0)
+            {
+                diff += 7;
+            }
+            DateTime CurrentWeek = now.AddDays(-diff);
+
+
             ProfilePageVM MyVm = new ProfilePageVM
             {
                 Username = MyUser.Username,
                 Password = MyUser.Password,
-                Points = MyUser.Points,
-                Groupname = MyGroup.Groupname
+                PointsToday = MyOperation.GetPoints(MyUser.Id, DateTime.Today, DateTime.Now),
+                PointsWeek = MyOperation.GetPoints(MyUser.Id, CurrentWeek, DateTime.Now),
+                PointsMonth = MyOperation.GetPoints(MyUser.Id, startDate, endDate),
+                PointsTotal = MyOperation.GetTotalPoints(MyUser.Id),
+                Groupname = MyGroup.Groupname,
+                Month = MyOperation.GetMonthName(Convert.ToInt32(DateTime.Now.Month))
+                
             };
             BindingContext = MyVm;
         }
+        
 
 #region Navbar
         void Btn_products(Object sender, System.EventArgs e)

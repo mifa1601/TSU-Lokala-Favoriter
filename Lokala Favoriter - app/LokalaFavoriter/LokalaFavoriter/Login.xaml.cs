@@ -57,6 +57,10 @@ namespace LokalaFavoriter
                 DisplayAlert("Error", "Felaktigt användarnamn eller lösenord", "Stäng");
             }
         }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
         protected override void OnAppearing()
         {
             base.OnAppearing();

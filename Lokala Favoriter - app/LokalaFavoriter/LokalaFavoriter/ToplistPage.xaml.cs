@@ -33,7 +33,7 @@ namespace LokalaFavoriter
             ProfilePageVM MyVm = new ProfilePageVM
             {
                 Username = MyUser.Username,
-                Points = MyUser.Points,
+                
             };
             BindingContext = MyVm;
 
