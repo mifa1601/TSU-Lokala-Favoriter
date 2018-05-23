@@ -40,6 +40,14 @@
                     </StackLayout>
 
                 </StackLayout>
+                <!--Logga ut-->
+                <StackLayout Grid.Row="1"  Orientation="Vertical" HorizontalOptions="Center">
+
+                    <StackLayout Orientation="Horizontal">
+                        <Button x:Name="LogoutBtn" Clicked="Btn_logout" Text="Logga ut" Margin="10,0,0,0" WidthRequest="80" HeightRequest="60" />
+                    </StackLayout>
+
+                </StackLayout>
                 <BoxView Grid.Row="2" BackgroundColor="LightSteelBlue" WidthRequest="400" VerticalOptions="LayoutOptions.Fill" Margin="0,0,0,0"/>
 
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
