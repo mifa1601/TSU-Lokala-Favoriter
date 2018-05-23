@@ -40,6 +40,7 @@ namespace LokalaFavoriter
         }
 
 #region Navbar
+
         void Btn_home(Object sender, System.EventArgs e)
         {
             var page = new HomePage(MyUser.Username, MyUser.Id);
