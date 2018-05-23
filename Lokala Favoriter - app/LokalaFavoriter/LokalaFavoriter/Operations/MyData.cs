@@ -103,26 +103,27 @@ namespace LokalaFavoriter.Operations
 
             return Points;
         }
+
+
+        #endregion
+
+        #region Toplist
+
         public string GetMonthName(int monthNumber)
         {
             List<string> Months = new List<string>
             {
                 "Januari","Februari","Mars","April","Maj","Juni","Juli","Augusti","September","Oktober","November","December"
             };
-            return Months[monthNumber -1];
+            return Months[monthNumber - 1];
         }
-
-        #endregion
-
-#region Toplist
-
-        public List<Point> GetTopList()
+        public List<Point> GetTopList(int group_id)
         {
             List<Point> Toplist = new List<Point>();
             sqls = new SqlServer();
             Point p;
             
-            string Myquery = "SELECT top 5 sum(Points.Points) as points, Users.Username From Points left join Users on Points.User_id = Users.Id group by Users.Username ORDER BY Points DESC";
+            string Myquery = "SELECT top 5 sum(Points.Points) as points, Users.Username From Points left join Users on Points.User_id = Users.Id WHERE Users.Group_id = '"+ group_id+"' group by Users.Username ORDER BY Points DESC";
             dt = sqls.QueryRead(Myquery);
             foreach (DataRow item in dt.Rows)
             {
@@ -135,6 +136,56 @@ namespace LokalaFavoriter.Operations
             }
             return Toplist;
         }
+        public Point HighestPoints(int group_id, DateTime start, DateTime end)
+        {
+            Point p;
+            string Myquery = "SELECT top 1 SUM(Points.Points) as Points, Users.Username FROM Points LEFT JOIN Users on points.User_id = Users.Id WHERE Users.Group_id = '" + group_id + "' AND DATE between '" + start + "' and '" + end + "' GROUP BY Username ORDER BY Points desc";
+            dt = sqls.QueryRead(Myquery);
+            foreach (DataRow item in dt.Rows)
+            {
+                p = new Point()
+                {
+                    Points = (int)item["Points"],
+                    Username = (string)item["Username"],
+                };
+                return p;
+            }
+            return null;
+        }
+        public Point HighestPointsOneCustomer(int group_id, DateTime start, DateTime end)
+        {
+            Point p;
+            string Myquery = "SELECT top 1 Points.Points, Users.Username, Points.Date FROM Points LEFT JOIN Users on points.User_id = Users.Id WHERE Users.Group_id = '" + group_id + "' AND DATE between '" + start + "' and '" + end + "' GROUP BY Username, Date, Points ORDER BY Points desc";
+            dt = sqls.QueryRead(Myquery);
+            foreach (DataRow item in dt.Rows)
+            {
+                p = new Point()
+                {
+                    Points = (int)item["Points"],
+                    Username = (string)item["Username"],
+                };
+                return p;
+            }
+            return null;
+        }
+        public Point MostCostumersOneDay(int group_id, DateTime start, DateTime end)
+        {
+            Point p;
+            
+            string Myquery = "SELECT top 1 COUNT(*) as Antal, Users.Username FROM Points LEFT JOIN Users on points.User_id = Users.Id WHERE Users.Group_id = '" + group_id + "' AND DATE between '" + start + "' and '" + end + "' GROUP BY Username ORDER BY Antal desc";
+            dt = sqls.QueryRead(Myquery);
+            foreach (DataRow item in dt.Rows)
+            {
+                p = new Point()
+                {
+                    Username = (string)item["Username"],
+                    Antal = (int)item["Antal"]
+                };
+                return p;
+            }
+            return null;
+        }
+
 
 #endregion
 

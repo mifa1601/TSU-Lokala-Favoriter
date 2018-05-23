@@ -61,10 +61,38 @@
 
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
 
-                <StackLayout Grid.Row="2" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="LightSteelBlue">
-                    <Label x:Name="username" Text="{Binding LoggedInUser}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
-                    <Label Text="{Binding User_id}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black"/>
-                  
+                <StackLayout Grid.Row="2">
+                    <!--Mest samma dag-->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="{Binding PointsToday.Username, StringFormat=\Den som sålt för mest idag är {0\}}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Text="{Binding PointsToday.Points, StringFormat=\ som har sålt för {0\} poäng!}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <!--Mest samma vecka-->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Label Text="{Binding PointsWeek.Username, StringFormat=\Den som sålt för mest denna vecka är {0\}}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Label Text="{Binding PointsWeek.Points, StringFormat=\ som har sålt för {0\} poäng!}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <!--Mest samma månad-->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Label Text="{Binding PointsMonth.Username, StringFormat=\Den som sålt för mest denna månad är {0\}}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Label Text="{Binding PointsMonth.Points, StringFormat=\ som har sålt för {0\} poäng!}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <!--Mest till samma kund-->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Label Text="{Binding PointsOneCustomer.Username, StringFormat=\Den som tjänat mest poäng på en kund är {0\}}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Label Text="{Binding PointsOneCustomer.Points, StringFormat=\ som fick {0\} poäng!}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <!--Mest kunder-->
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Label Text="{Binding MostCustomersOneDay.Username, StringFormat=\Den som haft mest kunder idag är {0\}}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        <Label Text="{Binding MostCustomersOneDay.Antal, StringFormat=\ som har sålt till {0\} olika!}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    </StackLayout>
+
+
                 </StackLayout>
 
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->

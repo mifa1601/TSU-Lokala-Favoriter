@@ -10,6 +10,7 @@ namespace LokalaFavoriter.Model
         public int User_id { get; set; }
         public string Username { get; set; }
         public int Points { get; set; }
+        public int Antal { get; set; }
         public DateTime Date { get; set; }
     }
 }

@@ -37,7 +37,7 @@ namespace LokalaFavoriter
             };
             BindingContext = MyVm;
 
-            Toplist.ItemsSource = MyOperation.GetTopList();
+            Toplist.ItemsSource = MyOperation.GetTopList(MyUser.Group_id);
         }
 
         
