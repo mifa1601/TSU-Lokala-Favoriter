@@ -61,6 +61,31 @@ namespace LokalaFavoriter.Operations
 
         #endregion
 
+#region Toplist
+
+        public List<User> GetTopList()
+        {
+            List<User> Toplist = new List<User>();
+            sqls = new SqlServer();
+            User u;
+            
+            string Myquery = "SELECT TOP 5 * FROM Users ORDER BY Points desc";
+            dt = sqls.QueryRead(Myquery);
+            foreach (DataRow item in dt.Rows)
+            {
+                u = new User()
+                {
+                    Id = (int)item["Id"],
+                    Username = (string)item["Username"],
+                    Points = (int)item["Points"]
+                };
+                Toplist.Add(u);
+            }
+            return Toplist;
+        }
+
+#endregion
+
 #region product
 
         public List<Product> GetProductsFromGroupId(int id)

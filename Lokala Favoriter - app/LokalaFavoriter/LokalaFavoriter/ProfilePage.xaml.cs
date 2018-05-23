@@ -41,7 +41,8 @@ namespace LokalaFavoriter
             };
             BindingContext = MyVm;
         }
-        #region buttons
+
+#region Navbar
         void Btn_products(Object sender, System.EventArgs e)
         {
             var page = new ProductPage(MyUser.Id);
@@ -59,7 +60,7 @@ namespace LokalaFavoriter
         }
         void Btn_toplist(Object sender, System.EventArgs e)
         {
-            var page = new ToplistPage();
+            var page = new ToplistPage(MyUser.Id);
             Navigation.PushAsync(page);
         }
         void Btn_Passwordpage(Object sender, System.EventArgs e)

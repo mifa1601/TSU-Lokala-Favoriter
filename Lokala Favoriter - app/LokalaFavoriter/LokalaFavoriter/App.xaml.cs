@@ -36,11 +36,11 @@ namespace LokalaFavoriter
         //    var page = new ProfilePage();
         //    MainPage.Navigation.PushAsync(page);
         //}
-        void Btn_toplist(Object sender, System.EventArgs e)
-        {
-            var page = new ToplistPage();
-            MainPage.Navigation.PushAsync(page);
-        }
+        //void Btn_toplist(Object sender, System.EventArgs e)
+        //{
+        //    var page = new ToplistPage();
+        //    MainPage.Navigation.PushAsync(page);
+        //}
         protected override void OnStart ()
 		{
 			// Handle when your app starts

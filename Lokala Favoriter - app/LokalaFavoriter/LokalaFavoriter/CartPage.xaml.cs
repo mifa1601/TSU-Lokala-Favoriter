@@ -113,7 +113,7 @@ namespace LokalaFavoriter
         }
         void Btn_toplist(Object sender, System.EventArgs e)
         {
-            var page = new ToplistPage();
+            var page = new ToplistPage(MyUser.Id);
             Navigation.PushAsync(page);
         }
 #endregion

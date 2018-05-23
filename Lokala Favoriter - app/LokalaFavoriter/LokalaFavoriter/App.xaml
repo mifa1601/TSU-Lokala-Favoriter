@@ -45,7 +45,7 @@
                         HeightRequest="80"
                         Margin="1,1,1,1"/>-->
 
-                        <Button Text="Topplista" 
+                        <!--<Button Text="Topplista" 
                         Clicked="Btn_toplist"
                         BackgroundColor="GhostWhite" 
                         TextColor="Black"
@@ -63,7 +63,7 @@
                         HorizontalOptions="Center"
                         WidthRequest="80"
                         HeightRequest="80"
-                        Margin="1,1,1,1"/>
+                        Margin="1,1,1,1"/>-->
 
                     </StackLayout>
                     
