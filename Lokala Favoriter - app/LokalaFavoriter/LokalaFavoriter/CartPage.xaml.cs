@@ -85,6 +85,24 @@ namespace LokalaFavoriter
 
         }
 
+        public void Btn_Sell(object sender, CustomParam e)
+        {
+            List<Cart> cartlist = new List<Cart>();
+            cartlist = MyOperation.GetCartFromUserId(MyUser.Id);
+            int points = 0;
+            foreach (var c in cartlist)
+            {
+                points = points + c.Points;
+            }
+
+            MyOperation.Sell(points, MyUser.Id);
+
+            MyOperation.EmptyUserCart(MyUser.Id);
+
+            var page = new CartPage(MyUser.Id);
+            Navigation.PushAsync(page);
+        }
+
         #endregion
 
 #region Navbar

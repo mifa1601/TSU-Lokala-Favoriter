@@ -83,6 +83,7 @@
 
                     </ListView>
                     <Label Text="{Binding TotalPrice, StringFormat=\{0\} Kr}" ClassId="Product_id"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                     <Button Text="Töm" 
                         Clicked="Btn_EmptyCart"
                         BindingContext="CartValue"
@@ -94,6 +95,17 @@
                         HeightRequest="80"
                         Margin="1,1,1,1"/>
 
+                    <Button Text="Sälj" 
+                        Clicked="Btn_Sell"
+                        BindingContext="CartValue"
+                        BackgroundColor="GhostWhite" 
+                        TextColor="Black"
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        Margin="1,1,1,1"/>
+                    </StackLayout>
                 </StackLayout>
 
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->

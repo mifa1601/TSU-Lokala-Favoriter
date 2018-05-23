@@ -236,6 +236,16 @@ namespace LokalaFavoriter.Operations
             return total;
         }
 
+        public void Sell(int points, int user_id)
+        {
+            sqls = new SqlServer();
+            string date = DateTime.Now.ToString("yyyy-MM-dd");
+
+
+            string Myquery = "INSERT INTO Points (Points, User_id, Date) Values ('"+ points + "', '" + user_id + "', '" + date + "')";
+            dt = sqls.QueryRead(Myquery);
+        }
+
 #endregion
 
     }
