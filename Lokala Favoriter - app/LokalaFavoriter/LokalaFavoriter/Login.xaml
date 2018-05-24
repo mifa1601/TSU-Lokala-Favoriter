@@ -7,12 +7,12 @@
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
             <Image Source="logotest.png"
                        HorizontalOptions="EndAndExpand"
-                       Margin="2,2,2,2"/>
-            <Entry x:Name="username"
+                       Margin="2,30,2,2"/>
+                <Entry x:Name="username"
                    PlaceholderColor="Black"
                    Placeholder="Användarnamn"
                    HorizontalOptions="Center" 
-                   Margin="0,80,0,0">
+                   Margin="0,60,0,0">
                 <Entry.WidthRequest>
                     <OnPlatform x:TypeArguments="x:Double">
                         <On Platform="iOS">150</On>
