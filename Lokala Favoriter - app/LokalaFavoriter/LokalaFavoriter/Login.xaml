@@ -5,7 +5,9 @@
              BackgroundColor="LightSteelBlue">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
-            <Image Source="logotest.png" Margin="0,80,0,0" HorizontalOptions="Fill" Aspect="AspectFill"></Image>
+            <Image Source="logotest.png"
+                       HorizontalOptions="EndAndExpand"
+                       Margin="2,2,2,2"/>
             <Entry x:Name="username"
                    PlaceholderColor="Black"
                    Placeholder="Användarnamn"
