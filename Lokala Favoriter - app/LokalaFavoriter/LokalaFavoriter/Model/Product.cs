@@ -10,5 +10,7 @@ namespace LokalaFavoriter.Model
         public string Name { get; set; }
         public int Price { get; set; }
         public int Points { get; set; }
+        public string Info { get; set; }
+        public string Src { get; set; }
     }
 }

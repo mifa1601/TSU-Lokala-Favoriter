@@ -53,10 +53,18 @@ namespace LokalaFavoriter
             MyOperation.AddToCart(MyUser.Id, product.Id);
             DisplayAlert("Kundvagn", "Du har lagt till " + product.Name, "OK");
         }
+
+        public void Btn_info(object sender, CustomParam e)
+        {
+            var product = e.Parameter;
+
+            var page = new ProductPopupPage(product.Id);
+            Navigation.PushAsync(page);
+        }
         #endregion
 
 
-#region Navbar
+        #region Navbar
 
         void Btn_home(Object sender, System.EventArgs e)
         {

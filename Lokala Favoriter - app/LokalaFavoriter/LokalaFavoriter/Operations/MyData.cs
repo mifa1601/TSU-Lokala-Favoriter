@@ -161,6 +161,30 @@ namespace LokalaFavoriter.Operations
             return ProductList;
         }
 
+        public Product GetProductInfo(int product_id)
+        {
+            sqls = new SqlServer();
+            Product p;
+            string Myquery = "SELECT * FROM Products WHERE id = '" + product_id + "'";
+            dt = sqls.QueryRead(Myquery);
+
+            foreach (DataRow item in dt.Rows)
+            {
+                p = new Product()
+                {
+                    Id = (int)item["Id"],
+                    Name = (string)item["Name"],
+                    Src = (string)item["Src"],
+                    Info = (string)item["Info"],
+                    Points = (int)item["Points"],
+                    Price = (int)item["Price"]
+                };
+
+                return p;
+            }
+            return null;
+        }
+
 #endregion
 
 #region Cart

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LokalaFavoriter.ProductPopupPage"
+             xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel; assembly=LokalaFavoriter">
+    
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label Text="{Binding Name}" TextColor="Black" Margin="10,0,0,0"/>
+            <Image Source="{Binding Src}"
+                       HorizontalOptions="EndAndExpand"
+                       Margin="2,2,2,2">
+
+            </Image>
+            <Label Text="{Binding Info}" TextColor="Black" Margin="10,0,0,0"/>
+            <Label Text="{Binding Price}" TextColor="Black" Margin="10,0,0,0"/>
+            <Label Text="{Binding Points}" TextColor="Black" Margin="10,0,0,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
