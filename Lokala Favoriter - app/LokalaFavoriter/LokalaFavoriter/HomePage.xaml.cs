@@ -29,11 +29,29 @@ namespace LokalaFavoriter
             dt = new DataTable();
             InitializeComponent();
             MyUser = MyOperation.GetUser(user_id);
+
+            DateTime now = DateTime.Now;
+            var startDate = new DateTime(now.Year, now.Month, 1);
+            var endDate = startDate.AddMonths(1).AddDays(-1);
+
+            var culture = System.Threading.Thread.CurrentThread.CurrentCulture;
+            var diff = now.DayOfWeek - culture.DateTimeFormat.FirstDayOfWeek;
+            if (diff < 0)
+            {
+                diff += 7;
+            }
+            DateTime CurrentWeek = now.AddDays(-diff);
+
             HomePageVM MyVM = new HomePageVM
             {
                 LoggedInUser = Username,
-                User_id = user_id,
                 Points = MyOperation.GetTotalPoints(MyUser.Id),
+                PointsToday = MyOperation.HighestPoints(MyUser.Group_id,DateTime.Today, DateTime.Now),
+                PointsWeek = MyOperation.HighestPoints(MyUser.Group_id, CurrentWeek, DateTime.Now),
+                PointsMonth = MyOperation.HighestPoints(MyUser.Group_id, startDate, endDate),
+                PointsOneCustomer = MyOperation.HighestPointsOneCustomer(MyUser.Group_id, DateTime.Today, DateTime.Now),
+                MostCustomersOneDay = MyOperation.MostCostumersOneDay(MyUser.Group_id, DateTime.Today, DateTime.Now)
+
             };
             BindingContext = MyVM;
             
