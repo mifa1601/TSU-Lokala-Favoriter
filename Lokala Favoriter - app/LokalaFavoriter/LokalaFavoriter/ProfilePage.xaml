@@ -70,11 +70,7 @@
                             <Label Text="{Binding Month, StringFormat=\Poäng i {0\}:}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
                             <Label Text="{Binding PointsMonth}" VerticalOptions="Center" HorizontalOptions="Center" />
                         </StackLayout>
-   
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" Margin="0,0,0,0" VerticalOptions="Center">
-                        <BoxView BackgroundColor="#41924B" HeightRequest="2" WidthRequest="200" Margin="0,0,50,0"/>
-                        <BoxView BackgroundColor="#41924B" HeightRequest="2" WidthRequest="230"/>
+
                     </StackLayout>
 
                     <Button Text="Ändra lösenord" Clicked="Btn_Passwordpage" BackgroundColor="#bbf7c3" WidthRequest="140" HorizontalOptions="Center" FontSize="10" FontAttributes="Bold" Margin="0,40,0,0"/>
