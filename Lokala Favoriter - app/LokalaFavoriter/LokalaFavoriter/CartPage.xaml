@@ -35,7 +35,7 @@
                 </StackLayout>
 
 
-                <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="End">
+                <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center">
 
                     <Image Source="logotest.png"
                        WidthRequest="100"
@@ -68,9 +68,10 @@
                                             <Label Grid.Column="0" Text="{Binding Name}" ClassId="Product_id"/>
                                             <Label Grid.Column="0" Text="{Binding Price, StringFormat=\{0\} Kr}" VerticalOptions="CenterAndExpand"/>
                                             <Image  Source="Remove.png"
-                                        WidthRequest="30"
-                                        HeightRequest="30"
-                                        HorizontalOptions="EndAndExpand" Margin="0,0,2,0">
+                                                    WidthRequest="30"
+                                                    HeightRequest="30"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    Margin="0,0,2,0">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="Btn_remove" />
                                                 </Image.GestureRecognizers>
@@ -88,23 +89,23 @@
                     <Button Text="Töm" 
                         Clicked="Btn_EmptyCart"
                         BindingContext="CartValue"
-                        BackgroundColor="GhostWhite" 
+                        BackgroundColor="#bbf7c3" 
                         TextColor="Black"
                         FontSize="10"
                         HorizontalOptions="Center"
-                        WidthRequest="80"
-                        HeightRequest="80"
+                        WidthRequest="60"
+                        HeightRequest="60"
                         Margin="1,1,1,1"/>
 
                     <Button Text="Sälj" 
                         Clicked="Btn_Sell"
                         BindingContext="CartValue"
-                        BackgroundColor="GhostWhite" 
+                        BackgroundColor="#bbf7c3" 
                         TextColor="Black"
                         FontSize="10"
                         HorizontalOptions="Center"
-                        WidthRequest="80"
-                        HeightRequest="80"
+                        WidthRequest="60"
+                        HeightRequest="60"
                         Margin="1,1,1,1"/>
                     </StackLayout>
                 </StackLayout>

@@ -33,16 +33,8 @@
                     </StackLayout>
 
                 </StackLayout>
-                <!--Logga ut-->
-                <StackLayout Grid.Row="1"  Orientation="Vertical" HorizontalOptions="Center">
 
-                    <StackLayout Orientation="Horizontal">
-                        <Button x:Name="LogoutBtn" Clicked="Btn_logout" Text="Logga ut" Margin="10,0,0,0" WidthRequest="80" HeightRequest="60" FontSize="10" TextColor="Black" BackgroundColor="#87E293" FontAttributes="Bold"/>
-                    </StackLayout>
-
-                </StackLayout>
-
-                <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="End">
+                <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center">
 
                     <Image Source="logotest.png"
                        WidthRequest="100"
@@ -56,6 +48,19 @@
                     </Image>
 
                 </StackLayout>
+
+                <!--Logga ut-->
+                
+                
+                <StackLayout Grid.Row="1"  Orientation="Vertical" HorizontalOptions="End">
+
+                    <StackLayout Orientation="Horizontal">
+                        <Button x:Name="LogoutBtn" Clicked="Btn_logout" Text="Logga ut" Margin="10,0,0,0" WidthRequest="80" HeightRequest="60" FontSize="10" TextColor="Black" BackgroundColor="#87E293" FontAttributes="Bold"/>
+                    </StackLayout>
+
+                </StackLayout>
+
+
 
                 <BoxView Grid.Row="2" BackgroundColor="#eeffed" WidthRequest="400" VerticalOptions="LayoutOptions.Fill" Margin="0,0,0,0"/>
 

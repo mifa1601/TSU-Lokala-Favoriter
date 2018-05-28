@@ -34,7 +34,7 @@
                 </StackLayout>
 
 
-                <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="End">
+                <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center">
 
                     <Image Source="logotest.png"
                        WidthRequest="100"
