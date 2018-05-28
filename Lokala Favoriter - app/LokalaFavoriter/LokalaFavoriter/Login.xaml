@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LokalaFavoriter.Login"
-             BackgroundColor="LightSteelBlue">
+             BackgroundColor="#41924B">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
             <Image Source="logotest.png"
@@ -35,9 +35,11 @@
             <Button x:Name="submit" 
                     Text="Logga in" 
                     Clicked="btn_login" 
+                    BackgroundColor="#bbf7c3" 
+                    WidthRequest="140" 
                     HorizontalOptions="Center" 
-                    BackgroundColor="GhostWhite" 
-                    TextColor="Black"/>
+                    FontSize="14" 
+                    FontAttributes="Bold"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
