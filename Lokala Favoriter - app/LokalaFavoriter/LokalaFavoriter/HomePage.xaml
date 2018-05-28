@@ -100,39 +100,6 @@
                 <BoxView Grid.Row="3" BackgroundColor="#41924B" WidthRequest="400"></BoxView>
                 <StackLayout Grid.Row="3" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
 
-                    <!--<Image Source="cicon.png"
-                       HorizontalOptions="Center"
-                       Margin="1,1,1,1">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Btn_cart" />
-                        </Image.GestureRecognizers>
-                    </Image>
-
-                    <Image Source="pricon.png"
-                       HorizontalOptions="Center"
-                       Margin="1,1,1,1">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Btn_products" />
-                        </Image.GestureRecognizers>
-                    </Image>
-
-                    <Image Source="ticon.png"
-                       HorizontalOptions="Center"
-                       Margin="1,1,1,1">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Btn_toplist" />
-                        </Image.GestureRecognizers>
-                    </Image>
-
-                    <Image Source="picon.png"
-                       HorizontalOptions="Center"
-                       Margin="1,1,1,1">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Btn_profile" />
-                        </Image.GestureRecognizers>
-                    </Image>-->
-
-
                     <Button Text="Kundvagn" 
                             Clicked="Btn_cart"
                             BindingContext="CartValue"

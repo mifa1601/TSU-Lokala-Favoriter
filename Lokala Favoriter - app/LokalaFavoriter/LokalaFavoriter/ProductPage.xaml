@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LokalaFavoriter.ProductPage"
-             BackgroundColor="LightSteelBlue"
+             BackgroundColor="#41924B"
              xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel; assembly=LokalaFavoriter">
     <ContentPage.Content>
 
-        <StackLayout VerticalOptions="Start" BackgroundColor="Black">
+        <StackLayout VerticalOptions="Start" BackgroundColor="#41924B">
 
             <Grid Margin="0,0,0,0">
                 <Grid.RowDefinitions>
@@ -16,7 +16,9 @@
                 </Grid.RowDefinitions>
 
 
-                <BoxView Grid.Row="1" BackgroundColor="Black" WidthRequest="400" HeightRequest="40" VerticalOptions="StartAndExpand" Margin="0,0,0,0"/>
+                <BoxView Grid.Row="1" BackgroundColor="#41924B" WidthRequest="400" HeightRequest="60" VerticalOptions="StartAndExpand" Margin="0,0,0,0"/>
+
+
 
                 <StackLayout Grid.Row="1"  Orientation="Vertical">
 
@@ -26,11 +28,13 @@
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Poäng:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"/>
-                        <Label Text="{Binding UserPoints}" TextColor="White" Margin="10,0,0,0"/>
+                        <Label Text="{Binding Points}" TextColor="White" Margin="10,0,0,0"/>
                     </StackLayout>
 
                 </StackLayout>
-                
+
+
+
                 <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="End">
 
                     <Image Source="logotest.png"
@@ -45,8 +49,8 @@
                     </Image>
 
                 </StackLayout>
-                
-                <BoxView Grid.Row="2" BackgroundColor="LightSteelBlue" WidthRequest="400" VerticalOptions="LayoutOptions.Fill" Margin="0,0,0,0"/>
+
+                <BoxView Grid.Row="2" BackgroundColor="#eeffed" WidthRequest="400" VerticalOptions="LayoutOptions.Fill" Margin="0,0,0,0"/>
 
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
 
@@ -68,7 +72,7 @@
                                             
                                             
                                             <Image  Source="info.png"
-                                                    WidthRequest="40"
+                                                    WidthRequest="80"
                                                     HeightRequest="40"
                                                     HorizontalOptions="Center">
                                                 <Image.GestureRecognizers>
@@ -76,8 +80,8 @@
                                                 </Image.GestureRecognizers>
                                             </Image>
                                             <Image  Source="add.png"
-                                                    WidthRequest="30"
-                                                    HeightRequest="30"
+                                                    WidthRequest="40"
+                                                    HeightRequest="40"
                                                     HorizontalOptions="EndAndExpand">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="Btn_add" />
@@ -95,49 +99,55 @@
 
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
 
-                <BoxView Grid.Row="3" BackgroundColor="Black" WidthRequest="400"></BoxView>
+                <BoxView Grid.Row="3" BackgroundColor="#41924B" WidthRequest="400"></BoxView>
                 <StackLayout Grid.Row="3" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
 
                     <Button Text="Kundvagn" 
-                        Clicked="Btn_cart"
-                        BindingContext="CartValue"
-                        BackgroundColor="GhostWhite" 
-                        TextColor="Black"
-                        FontSize="10"
-                        HorizontalOptions="Center"
-                        WidthRequest="80"
-                        HeightRequest="80"
-                        Margin="1,1,1,1"/>
+                            Clicked="Btn_cart"
+                            BindingContext="CartValue"
+                            BackgroundColor="#87E293" 
+                            TextColor="Black"
+                            FontSize="10"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            WidthRequest="84"
+                            HeightRequest="80"
+                            Margin="1,1,1,1"/>
+
 
                     <Button Text="Produkter"
-                        Clicked="Btn_products"
-                        BackgroundColor="GhostWhite" 
-                        TextColor="Black"
-                        FontSize="10"
-                        HorizontalOptions="Center"
-                        WidthRequest="80"
-                        HeightRequest="80"
-                        Margin="1,1,1,1"/>
+                            Clicked="Btn_products"
+                            BackgroundColor="#bbf7c3" 
+                            TextColor="Black"
+                            FontSize="10"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            WidthRequest="84"
+                            HeightRequest="80"
+                            Margin="1,1,1,1"/>
 
                     <Button Text="Topplista" 
-                        Clicked="Btn_toplist"
-                        BackgroundColor="GhostWhite" 
-                        TextColor="Black"
-                        FontSize="10"
-                        HorizontalOptions="Center"
-                        WidthRequest="80"
-                        HeightRequest="80"
-                        Margin="1,1,1,1"/>
+                            Clicked="Btn_toplist"
+                            BackgroundColor="#87E293" 
+                            TextColor="Black"
+                            FontSize="10"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            WidthRequest="84"
+                            HeightRequest="80"
+                            Margin="1,1,1,1"/>
 
                     <Button Text="Profil"
-                        Clicked="Btn_profile"
-                        BackgroundColor="GhostWhite" 
-                        TextColor="Black"
-                        FontSize="10"
-                        HorizontalOptions="Center"
-                        WidthRequest="80"
-                        HeightRequest="80"
-                        Margin="1,1,1,1"/>
+                            Clicked="Btn_profile"
+                            BackgroundColor="#87E293" 
+                            TextColor="Black"
+                            FontSize="10"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            WidthRequest="84"
+                            HeightRequest="80"
+                            Margin="1,1,1,1"/>
+
 
                 </StackLayout>
 

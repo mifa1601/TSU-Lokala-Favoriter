@@ -48,6 +48,8 @@ namespace LokalaFavoriter
             ProfilePageVM MyVm = new ProfilePageVM
             {
                 Username = MyUser.Username,
+                LoggedInUser = MyUser.Username,
+                Points = MyOperation.GetTotalPoints(MyUser.Id),
                 Password = MyUser.Password,
                 PointsToday = MyOperation.GetPoints(MyUser.Id, DateTime.Today, DateTime.Now),
                 PointsWeek = MyOperation.GetPoints(MyUser.Id, CurrentWeek, DateTime.Now),
