@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LokalaFavoriter.HomePage"
-             BackgroundColor="LightSteelBlue"
+             BackgroundColor="#41924B"
              xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel; assembly=LokalaFavoriter">
 
     <ContentPage.Content>
 
-        <StackLayout VerticalOptions="Start" BackgroundColor="Black">
+        <StackLayout VerticalOptions="Start" BackgroundColor="#41924B">
             
             <Grid Margin="0,0,0,0">
                 <Grid.RowDefinitions>
@@ -17,7 +17,7 @@
                 </Grid.RowDefinitions>
 
 
-                <BoxView Grid.Row="1" BackgroundColor="Black" WidthRequest="400" HeightRequest="60" VerticalOptions="StartAndExpand" Margin="0,0,0,0"/>
+                <BoxView Grid.Row="1" BackgroundColor="#41924B" WidthRequest="400" HeightRequest="60" VerticalOptions="StartAndExpand" Margin="0,0,0,0"/>
                
 
                 
@@ -37,7 +37,7 @@
                 <StackLayout Grid.Row="1"  Orientation="Vertical" HorizontalOptions="Center">
 
                     <StackLayout Orientation="Horizontal">
-                        <Button x:Name="LogoutBtn" Clicked="Btn_logout" Text="Logga ut" Margin="10,0,0,0" WidthRequest="80" HeightRequest="60" FontSize="10" TextColor="Black"/>
+                        <Button x:Name="LogoutBtn" Clicked="Btn_logout" Text="Logga ut" Margin="10,0,0,0" WidthRequest="80" HeightRequest="60" FontSize="10" TextColor="Black" BackgroundColor="#87E293" FontAttributes="Bold"/>
                     </StackLayout>
 
                 </StackLayout>
@@ -56,8 +56,8 @@
                     </Image>
 
                 </StackLayout>
-                
-                <BoxView Grid.Row="2" BackgroundColor="LightSteelBlue" WidthRequest="400" VerticalOptions="LayoutOptions.Fill" Margin="0,0,0,0"/>
+
+                <BoxView Grid.Row="2" BackgroundColor="#eeffed" WidthRequest="400" VerticalOptions="LayoutOptions.Fill" Margin="0,0,0,0"/>
 
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
 
@@ -97,7 +97,7 @@
 
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
 
-                <BoxView Grid.Row="3" BackgroundColor="Black" WidthRequest="400"></BoxView>
+                <BoxView Grid.Row="3" BackgroundColor="#41924B" WidthRequest="400"></BoxView>
                 <StackLayout Grid.Row="3" Orientation="Horizontal"  HorizontalOptions="CenterAndExpand">
 
                     <!--<Image Source="cicon.png"
@@ -136,41 +136,46 @@
                     <Button Text="Kundvagn" 
                             Clicked="Btn_cart"
                             BindingContext="CartValue"
-                            BackgroundColor="GhostWhite" 
+                            BackgroundColor="#87E293" 
                             TextColor="Black"
                             FontSize="10"
+                            FontAttributes="Bold"
                             HorizontalOptions="Center"
-                            WidthRequest="110"
+                            WidthRequest="84"
                             HeightRequest="80"
                             Margin="1,1,1,1"/>
 
+
                     <Button Text="Produkter"
                             Clicked="Btn_products"
-                            BackgroundColor="GhostWhite" 
+                            BackgroundColor="#87E293" 
                             TextColor="Black"
                             FontSize="10"
+                            FontAttributes="Bold"
                             HorizontalOptions="Center"
-                            WidthRequest="110"
+                            WidthRequest="84"
                             HeightRequest="80"
                             Margin="1,1,1,1"/>
 
                     <Button Text="Topplista" 
                             Clicked="Btn_toplist"
-                            BackgroundColor="GhostWhite" 
+                            BackgroundColor="#87E293" 
                             TextColor="Black"
                             FontSize="10"
+                            FontAttributes="Bold"
                             HorizontalOptions="Center"
-                            WidthRequest="110"
+                            WidthRequest="84"
                             HeightRequest="80"
                             Margin="1,1,1,1"/>
 
                     <Button Text="Profil"
                             Clicked="Btn_profile"
-                            BackgroundColor="GhostWhite" 
+                            BackgroundColor="#87E293" 
                             TextColor="Black"
                             FontSize="10"
+                            FontAttributes="Bold"
                             HorizontalOptions="Center"
-                            WidthRequest="110"
+                            WidthRequest="84"
                             HeightRequest="80"
                             Margin="1,1,1,1"/>
 
