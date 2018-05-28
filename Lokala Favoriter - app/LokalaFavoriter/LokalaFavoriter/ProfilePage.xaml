@@ -53,18 +53,31 @@
 
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
 
-                <StackLayout Grid.Row="2">
-                    <Label Text="Användarnamn:" VerticalOptions="Center" HorizontalOptions="Center"/>
-                    <Label Text="{Binding Username}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                    <Label Text="Idag:" VerticalOptions="Center" HorizontalOptions="Center"/>
-                    <Label Text="{Binding PointsToday}" VerticalOptions="Center" HorizontalOptions="Center" />
-                    <Label Text="Vecka:" VerticalOptions="Center" HorizontalOptions="Center"/>
-                    <Label Text="{Binding PointsWeek}" VerticalOptions="Center" HorizontalOptions="Center" />
-                    <Label Text="{Binding Month, StringFormat=\{0\}:}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                    <Label Text="{Binding PointsMonth}" VerticalOptions="Center" HorizontalOptions="Center" />
-                    <Label Text="Du tillhör grupp:" VerticalOptions="Center" HorizontalOptions="Center"/>
-                    <Label Text="{Binding Groupname}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                    <Button Text="Ändra lösenord" Clicked="Btn_Passwordpage" />
+                <StackLayout Grid.Row="2" Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Vertical" Margin="0,10,20,0">
+                            <Label Text="Användarnamn:" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label Text="{Binding Username}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Text="Du tillhör grupp:" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label Text="{Binding Groupname}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </StackLayout>
+                        <BoxView BackgroundColor="#41924B" HeightRequest="200" WidthRequest="2" HorizontalOptions="Center" Margin="0,0,0,0"/>
+                        <StackLayout Orientation="Vertical" Margin="20,10,0,0" VerticalOptions="Start">
+                            <Label Text="Poäng idag:" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label Text="{Binding PointsToday}" VerticalOptions="Center" HorizontalOptions="Center" />
+                            <Label Text="Poäng denna vecka:" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label Text="{Binding PointsWeek}" VerticalOptions="Center" HorizontalOptions="Center" />
+                            <Label Text="{Binding Month, StringFormat=\Poäng i {0\}:}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label Text="{Binding PointsMonth}" VerticalOptions="Center" HorizontalOptions="Center" />
+                        </StackLayout>
+   
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="0,0,0,0" VerticalOptions="Center">
+                        <BoxView BackgroundColor="#41924B" HeightRequest="2" WidthRequest="200" Margin="0,0,50,0"/>
+                        <BoxView BackgroundColor="#41924B" HeightRequest="2" WidthRequest="230"/>
+                    </StackLayout>
+
+                    <Button Text="Ändra lösenord" Clicked="Btn_Passwordpage" BackgroundColor="#bbf7c3" WidthRequest="140" HorizontalOptions="Center" FontSize="10" FontAttributes="Bold" Margin="0,40,0,0"/>
                 </StackLayout>
 
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->

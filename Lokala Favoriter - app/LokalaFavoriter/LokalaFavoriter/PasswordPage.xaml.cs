@@ -34,8 +34,9 @@ namespace LokalaFavoriter
             ProfilePageVM MyVm = new ProfilePageVM
             {
                 Username = MyUser.Username,
+                LoggedInUser = MyUser.Username,
                 Password = MyUser.Password,
-                PointsTotal = MyOperation.GetTotalPoints(MyUser.Id),
+                Points = MyOperation.GetTotalPoints(MyUser.Id),
             };
             BindingContext = MyVm;
 
