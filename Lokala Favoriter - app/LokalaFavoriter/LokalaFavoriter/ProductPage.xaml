@@ -80,9 +80,10 @@
                                                 </Image.GestureRecognizers>
                                             </Image>
                                             <Image  Source="add.png"
-                                                    WidthRequest="40"
-                                                    HeightRequest="40"
-                                                    HorizontalOptions="EndAndExpand">
+                                                    WidthRequest="30"
+                                                    HeightRequest="30"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    Margin="0,0,2,0">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="Btn_add" />
                                                 </Image.GestureRecognizers>
