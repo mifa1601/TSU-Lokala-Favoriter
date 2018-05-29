@@ -17,5 +17,6 @@ namespace LokalaFavoriter.ViewModel
         public int Points { get; set; }
         public string Groupname { get; set; }
         public string Month { get; set; }
+        public string Src { get; set; }
     }
 }
