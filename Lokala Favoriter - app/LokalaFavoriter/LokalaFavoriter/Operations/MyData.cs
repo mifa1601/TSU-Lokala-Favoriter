@@ -122,18 +122,43 @@ namespace LokalaFavoriter.Operations
             List<Point> Toplist = new List<Point>();
             sqls = new SqlServer();
             Point p;
-            
+            int position = -1;
             string Myquery = "SELECT top 5 sum(Points.Points) as points, Users.Username From Points left join Users on Points.User_id = Users.Id WHERE Users.Group_id = '"+ group_id+"' group by Users.Username ORDER BY Points DESC";
             dt = sqls.QueryRead(Myquery);
+            string first = "first.png";
+            string second = "second.png";
+            string third = "third.png";
+            string src = "";
             foreach (DataRow item in dt.Rows)
             {
+                position = position + 1;
+
+                if (position == 0)
+                {
+                    src = first;
+                }
+                if (position == 1)
+                {
+                    src = second;
+                }
+                if (position == 2)
+                {
+                    src = third;
+                }
+                if (position >= 3)
+                {
+                    src = "";
+                }
                 p = new Point()
                 {
                     Points = (int)item["Points"],
                     Username = (string)item["Username"],
+                    Position = position,
+                    Src = src
                 };
                 Toplist.Add(p);
             }
+            position = -1;
             return Toplist;
         }
         public Point HighestPoints(int group_id, DateTime start, DateTime end)

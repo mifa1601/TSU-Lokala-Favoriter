@@ -54,27 +54,20 @@
                 <!--//////////////////////////////////////////////////////////////////////////////////////////////-->
 
                 <StackLayout Grid.Row="2">
-                    <ListView x:Name="Toplist">
+                    <ListView x:Name="Toplist" RowHeight="90">
                         <ListView.ItemTemplate>
 
                             <DataTemplate>
                                 <ViewCell>
                                     <ViewCell.View>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="1*" />
-                                            </Grid.ColumnDefinitions>
-                                            <Label Grid.Column="0" Text="{Binding Username}" Margin="5,0,0,2" FontAttributes="Bold"/>
-                                            <Label Grid.Column="0" Text="{Binding Points, StringFormat=\{0\} poäng}" VerticalOptions="CenterAndExpand" Margin="5,20,0,0"/>
-                                            <!--<Image  Source="add.png"
-                                        WidthRequest="30"
-                                        HeightRequest="30"
-                                        HorizontalOptions="EndAndExpand">
-                                                <Image.GestureRecognizers>
-                                                    <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="Btn_add" />
-                                                </Image.GestureRecognizers>
-                                            </Image>-->
-                                        </Grid>
+
+
+                                            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,5,0,0">
+                                                <Image Source="{Binding Src}"/>
+                                                <Label Text="{Binding Username}" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                            <Label Text="{Binding Points, StringFormat=\{0\} poäng}" HorizontalOptions="Center"/>
+                                            </StackLayout>
+
                                     </ViewCell.View>
                                 </ViewCell>
                             </DataTemplate>

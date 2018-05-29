@@ -12,5 +12,7 @@ namespace LokalaFavoriter.Model
         public int Points { get; set; }
         public int Antal { get; set; }
         public DateTime Date { get; set; }
+        public int Position { get; set; }
+        public string Src { get; set; }
     }
 }

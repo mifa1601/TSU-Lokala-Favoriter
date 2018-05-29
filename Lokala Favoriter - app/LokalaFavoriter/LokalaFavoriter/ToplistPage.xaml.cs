@@ -34,13 +34,20 @@ namespace LokalaFavoriter
             {
                 LoggedInUser = MyUser.Username,
                 Points = MyOperation.GetTotalPoints(MyUser.Id)
+
             };
             BindingContext = MyVm;
 
             Toplist.ItemsSource = MyOperation.GetTopList(MyUser.Group_id);
         }
 
-        
+        public List<string> medals = new List<string>
+        {
+            "first.png",
+            "second.png",
+            "third.png"
+
+        };
 
         
 

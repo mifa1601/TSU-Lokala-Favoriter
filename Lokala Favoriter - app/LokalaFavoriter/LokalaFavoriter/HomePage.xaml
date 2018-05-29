@@ -21,9 +21,9 @@
                
 
                 
-                <StackLayout Grid.Row="1"  Orientation="Vertical">
+                <StackLayout Grid.Row="1"  Orientation="Vertical" Spacing="-2">
 
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical" Spacing="-2">
                         <Label Text="Användare:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"/>
                         <Label Text="{Binding LoggedInUser}" TextColor="White" Margin="10,0,0,0"/>
                     </StackLayout>
@@ -68,35 +68,53 @@
 
                 <StackLayout Grid.Row="2">
                     <!--Mest samma dag-->
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <Label Text="{Binding PointsToday.Username, StringFormat=\Den som sålt för mest idag är {0\}}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                    <Label Text="{Binding PointsToday.Points, StringFormat=\ som har sålt för {0\} poäng!}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" Margin="2,0,0,0">
+                        <Label Text="Den som sålt mest för idag är:" HorizontalOptions="Center"/>
+                        <Label Text="{Binding PointsToday.Username}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+                    <Label Text="{Binding PointsToday.Points, StringFormat=\ som har sålt för {0\} poäng!}" HorizontalOptions="Center"/>
                     </StackLayout>
+
+                    <BoxView BackgroundColor="#41924B" HeightRequest="2" WidthRequest="250" Margin="0,2,0,10" HorizontalOptions="Start"/>
 
                     <!--Mest samma vecka-->
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <Label Text="{Binding PointsWeek.Username, StringFormat=\Den som sålt för mest denna vecka är {0\}}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                        <Label Text="{Binding PointsWeek.Points, StringFormat=\ som har sålt för {0\} poäng!}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="End" Margin="0,0,2,0">
+                        <Label Text="Den som sålt mest denna vecka är:" HorizontalOptions="Center"/>
+                        <Label Text="{Binding PointsWeek.Username}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+                        <Label Text="{Binding PointsWeek.Points, StringFormat=\ som har sålt för {0\} poäng!}" HorizontalOptions="Center"/>
                     </StackLayout>
+                    
+
+
+                    <BoxView BackgroundColor="#41924B" HeightRequest="2" WidthRequest="250" Margin="0,2,0,10" HorizontalOptions="End"/>
 
                     <!--Mest samma månad-->
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <Label Text="{Binding PointsMonth.Username, StringFormat=\Den som sålt för mest denna månad är {0\}}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                        <Label Text="{Binding PointsMonth.Points, StringFormat=\ som har sålt för {0\} poäng!}" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" Margin="2,0,0,0">
+                        <Label Text="Den som sålt mest denna månad är:" HorizontalOptions="Center"/>
+                        <Label Text="{Binding PointsMonth.Username}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+                        <Label Text="{Binding PointsMonth.Points, StringFormat=\ som har sålt för {0\} poäng!}" HorizontalOptions="Center"/>
                     </StackLayout>
 
+                    <BoxView BackgroundColor="#41924B" HeightRequest="2" WidthRequest="250" Margin="0,2,0,10" HorizontalOptions="Start"/>
+
                     <!--Mest till samma kund-->
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <Label Text="{Binding PointsOneCustomer.Username, StringFormat=\Den som tjänat mest poäng på en kund är {0\}}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    
+                    <StackLayout Orientation="Vertical" HorizontalOptions="End" Margin="0,0,2,0">
+                        <Label Text="Den som tjänat mest poäng på en kund är:" HorizontalOptions="Center"/>
+                        <Label Text="{Binding PointsOneCustomer.Username}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
                         <Label Text="{Binding PointsOneCustomer.Points, StringFormat=\ som fick {0\} poäng!}" VerticalOptions="Center" HorizontalOptions="Center"/>
                     </StackLayout>
 
+                    <BoxView BackgroundColor="#41924B" HeightRequest="2" WidthRequest="250" Margin="0,2,0,10" HorizontalOptions="End"/>
+
                     <!--Mest kunder-->
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <Label Text="{Binding MostCustomersOneDay.Username, StringFormat=\Den som haft mest kunder idag är {0\}}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" Margin="2,0,0,0">
+                        <Label Text="Den som haft mest kunder idag är:" HorizontalOptions="Center"/>
+                        <Label Text="{Binding MostCustomersOneDay.Username}" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
                         <Label Text="{Binding MostCustomersOneDay.Antal, StringFormat=\ som har sålt till {0\} olika!}" VerticalOptions="Center" HorizontalOptions="Center"/>
                     </StackLayout>
-
+                    
+                    <BoxView BackgroundColor="#41924B" HeightRequest="2" WidthRequest="250" Margin="0,10,0,0" HorizontalOptions="Start"/>
 
                 </StackLayout>
 
