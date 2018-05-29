@@ -2,19 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LokalaFavoriter.ProductPopupPage"
-             xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel; assembly=LokalaFavoriter">
+             xmlns:VM="clr-namespace:LokalaFavoriter.ViewModel; assembly=LokalaFavoriter"
+             BackgroundColor="#eeffed">
     
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="CenterAndExpand">
-            <Label Text="{Binding Name}" TextColor="Black" Margin="10,0,0,0"/>
+        <StackLayout HorizontalOptions="Center">
+            <Label Text="{Binding Name}" TextColor="Black" Margin="15,0,0,0" HorizontalOptions="Center" FontAttributes="Bold" FontSize="25"/>
+            <BoxView BackgroundColor="#41924B" HeightRequest="2" WidthRequest="250" HorizontalOptions="Center" Margin="0,0,0,2"/>
             <Image Source="{Binding Src}"
-                       HorizontalOptions="EndAndExpand"
+                       HorizontalOptions="CenterAndExpand"
                        Margin="2,2,2,2">
 
             </Image>
-            <Label Text="{Binding Info}" TextColor="Black" Margin="10,0,0,0"/>
-            <Label Text="{Binding Price}" TextColor="Black" Margin="10,0,0,0"/>
-            <Label Text="{Binding Points}" TextColor="Black" Margin="10,0,0,0"/>
+            <Label Text="{Binding Info}" TextColor="Black" Margin="10,0,0,0" HorizontalOptions="Center" FontAttributes="Italic"/>
+            <Label Text="{Binding Price, StringFormat=\ Kostar: {0\} kr.}" TextColor="Black" Margin="10,0,0,0" HorizontalOptions="Center"/>
+            <Label Text="{Binding Points, StringFormat=\ Ger {0\} poäng.}}" TextColor="Black" Margin="10,0,0,0" HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
