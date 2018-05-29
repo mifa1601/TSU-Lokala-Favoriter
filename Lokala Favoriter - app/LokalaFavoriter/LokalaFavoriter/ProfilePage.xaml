@@ -22,19 +22,21 @@
                 <StackLayout Grid.Row="1"  Orientation="Vertical">
 
 
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Användare:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"/>
-                        <Label Text="{Binding LoggedInUser}" TextColor="White" Margin="10,0,0,0"/>
+                    <StackLayout Grid.Row="1"  Orientation="Vertical" Spacing="-2">
+
+                        <StackLayout Orientation="Vertical" Spacing="-2">
+                            <Label Text="Användare:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"/>
+                            <Label Text="{Binding LoggedInUser}" TextColor="White" Margin="10,0,0,0"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Poäng:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"/>
+                            <Label Text="{Binding Points}" TextColor="White" Margin="10,0,0,0"/>
+                        </StackLayout>
+
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Poäng:" FontAttributes="Bold" TextColor="White" Margin="10,0,0,0"/>
-                        <Label Text="{Binding Points}" TextColor="White" Margin="10,0,0,0"/>
-                    </StackLayout>
-
-                </StackLayout>
 
 
-                <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center">
+                    <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center">
 
                     <Image Source="logotest.png"
                        WidthRequest="100"
